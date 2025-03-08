@@ -153,7 +153,7 @@
 
     <!-- Section Layanan -->
     <section id="next-section" class="bg-white border-b py-8">
-        <div data-aos="fade-right" data-aos-delay="200" class="bg-white p-8 shadow-lg rounded-lg">
+        <div data-aos="fade-right" data-aos-delay="100" class="bg-white p-8 shadow-lg rounded-lg">
             <div class="container max-w-5xl mx-auto m-8">
                 <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800" id="layanan">
                     Layanan
@@ -368,7 +368,7 @@
         </div>
 
         <!-- Peminjaman Alat -->
-        <div data-aos="fade-left" data-aos-delay="300" class="bg-white p-8 shadow-lg rounded-lg">
+        <div data-aos="fade-left" data-aos-delay="100" class="bg-white p-8 shadow-lg rounded-lg">
             <div class="container max-w-5xl mx-auto m-8">
                 <div
                     class="flex flex-wrap rounded shadow mb-4 
@@ -455,7 +455,6 @@
 
     <script>
         AOS.init({
-            duration: 1000, // Durasi animasi
             once: false, // Animasi hanya berjalan sekali
         });
         document.addEventListener("DOMContentLoaded", function() {
