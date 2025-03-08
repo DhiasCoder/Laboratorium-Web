@@ -1,133 +1,420 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="id">
 
-        <title>Laravel</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorium Raden Fatah</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+</head>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+<body class="bg-gradient-to-r from-blue-600 to-sky-300 text-white overflow-x-hidden">
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full bg-white shadow-md z-50 
+    transition-all duration-300 ease-out flex items-center justify-between px-6 py-3"
+        data-aos="fade-down" data-aos-delay="300">
 
-        <!-- Styles -->
-        <style>
-            /* ! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Figtree, sans-serif;font-feature-settings:normal}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]{display:none}*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::-webkit-backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: }.relative{position:relative}.mx-auto{margin-left:auto;margin-right:auto}.mx-6{margin-left:1.5rem;margin-right:1.5rem}.ml-4{margin-left:1rem}.mt-16{margin-top:4rem}.mt-6{margin-top:1.5rem}.mt-4{margin-top:1rem}.-mt-px{margin-top:-1px}.mr-1{margin-right:0.25rem}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.h-16{height:4rem}.h-7{height:1.75rem}.h-6{height:1.5rem}.h-5{height:1.25rem}.min-h-screen{min-height:100vh}.w-auto{width:auto}.w-16{width:4rem}.w-7{width:1.75rem}.w-6{width:1.5rem}.w-5{width:1.25rem}.max-w-7xl{max-width:80rem}.shrink-0{flex-shrink:0}.scale-100{--tw-scale-x:1;--tw-scale-y:1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.items-center{align-items:center}.justify-center{justify-content:center}.gap-6{gap:1.5rem}.gap-4{gap:1rem}.self-center{align-self:center}.rounded-lg{border-radius:0.5rem}.rounded-full{border-radius:9999px}.bg-gray-100{--tw-bg-opacity:1;background-color:rgb(243 244 246 / var(--tw-bg-opacity))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity))}.bg-red-50{--tw-bg-opacity:1;background-color:rgb(254 242 242 / var(--tw-bg-opacity))}.bg-dots-darker{background-image:url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(0,0,0,0.07)'/%3E%3C/svg%3E")}.from-gray-700\/50{--tw-gradient-from:rgb(55 65 81 / 0.5);--tw-gradient-to:rgb(55 65 81 / 0);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-transparent{--tw-gradient-to:rgb(0 0 0 / 0);--tw-gradient-stops:var(--tw-gradient-from), transparent, var(--tw-gradient-to)}.bg-center{background-position:center}.stroke-red-500{stroke:#ef4444}.stroke-gray-400{stroke:#9ca3af}.p-6{padding:1.5rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.text-center{text-align:center}.text-right{text-align:right}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.font-semibold{font-weight:600}.leading-relaxed{line-height:1.625}.text-gray-600{--tw-text-opacity:1;color:rgb(75 85 99 / var(--tw-text-opacity))}.text-gray-900{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity))}.underline{-webkit-text-decoration-line:underline;text-decoration-line:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-gray-500\/20{--tw-shadow-color:rgb(107 114 128 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.selection\:bg-red-500 *::selection{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity))}.selection\:text-white *::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.selection\:bg-red-500::selection{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity))}.selection\:text-white::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.hover\:text-gray-900:hover{--tw-text-opacity:1;color:rgb(17 24 39 / var(--tw-text-opacity))}.hover\:text-gray-700:hover{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity))}.focus\:rounded-sm:focus{border-radius:0.125rem}.focus\:outline:focus{outline-style:solid}.focus\:outline-2:focus{outline-width:2px}.focus\:outline-red-500:focus{outline-color:#ef4444}.group:hover .group-hover\:stroke-gray-600{stroke:#4b5563}.z-10{z-index: 10}@media (prefers-reduced-motion: no-preference){.motion-safe\:hover\:scale-\[1\.01\]:hover{--tw-scale-x:1.01;--tw-scale-y:1.01;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}}@media (prefers-color-scheme: dark){.dark\:bg-gray-900{--tw-bg-opacity:1;background-color:rgb(17 24 39 / var(--tw-bg-opacity))}.dark\:bg-gray-800\/50{background-color:rgb(31 41 55 / 0.5)}.dark\:bg-red-800\/20{background-color:rgb(153 27 27 / 0.2)}.dark\:bg-dots-lighter{background-image:url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22676 0C1.91374 0 2.45351 0.539773 2.45351 1.22676C2.45351 1.91374 1.91374 2.45351 1.22676 2.45351C0.539773 2.45351 0 1.91374 0 1.22676C0 0.539773 0.539773 0 1.22676 0Z' fill='rgba(255,255,255,0.07)'/%3E%3C/svg%3E")}.dark\:bg-gradient-to-bl{background-image:linear-gradient(to bottom left, var(--tw-gradient-stops))}.dark\:stroke-gray-600{stroke:#4b5563}.dark\:text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity))}.dark\:text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.dark\:shadow-none{--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.dark\:ring-1{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.dark\:ring-inset{--tw-ring-inset:inset}.dark\:ring-white\/5{--tw-ring-color:rgb(255 255 255 / 0.05)}.dark\:hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity))}.group:hover .dark\:group-hover\:stroke-gray-400{stroke:#9ca3af}}@media (min-width: 640px){.sm\:fixed{position:fixed}.sm\:top-0{top:0px}.sm\:right-0{right:0px}.sm\:ml-0{margin-left:0px}.sm\:flex{display:flex}.sm\:items-center{align-items:center}.sm\:justify-center{justify-content:center}.sm\:justify-between{justify-content:space-between}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:gap-8{gap:2rem}.lg\:p-8{padding:2rem}}
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
-            @if (Route::has('login'))
-                <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
-                    @auth
-                        <a href="{{ url('/home') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+        <!-- Logo -->
+        <div class="flex items-center gap-x-3">
+            <a href="{{ route('home') }}" class="flex items-center">
+                <img src="{{ asset('assets/images/logouin.png') }}" alt="Logo" class="h-10 w-auto">
+                <span class="text-xl font-bold text-gray-800">LABORATORIUM</span>
+            </a>
+        </div>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-                        @endif
-                    @endauth
+        <!-- Tombol Login -->
+        <div>
+            <a href="{{ route('login') }}" class="bg-gray-800 text-white px-4 py-2 rounded-full shadow 
+            transition-all duration-300 ease-out
+            hover:bg-gray-700 hover:text-white hover:shadow-xl hover:-translate-y-1 hover:scale-105">
+                Masuk
+            </a>
+        </div>
+    </nav>
+
+    <div class="min-h-screen flex items-center justify-center bg-gradient-to-b from-blue-100 to-white px-4 pt-24">
+        <div class="container mx-auto flex flex-wrap flex-col md:flex-row items-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="flex flex-col w-full md:w-2/5 text-center md:text-left">
+                <div id="typed-text-container" class="text-center md:text-left">
+                    <h1 class="text-5xl font-bold text-gray-800">
+                        <span id="typed-text"></span>
+                    </h1>
+                    <h2 class="text-3xl text-blue-600 mt-2">Fakultas Sains dan Teknologi</h2>
+                    <p class="text-lg text-gray-700 mt-3">Inovasi, Eksperimen, dan Riset Mahasiswa</p>
                 </div>
-            @endif
+                <a href="#layanan" class="text-center mt-6 py-4 px-8 bg-blue-500 text-white font-bold rounded-full shadow-lg 
+                hover:bg-blue-600 transition transform hover:scale-105">Ayo Mulai</a>
+            </div>
+            <div class="w-full md:w-3/5 relative">
+                <img class="w-full md:w-4/5 z-50" src="{{ asset('assets/images/hero.png') }}" alt="hero illustration" />
+                <div class="absolute top-0 left-10 w-16 h-16 bg-blue-300 rounded-full opacity-50 animate-bounce"></div>
+                <div class="absolute bottom-10 right-20 w-24 h-24 bg-blue-400 rounded-full opacity-30 animate-pulse"></div>
+            </div>
+        </div>
+    </div>
 
-            <div class="max-w-7xl mx-auto p-6 lg:p-8">
-                <div class="flex justify-center">
-                    <svg viewBox="0 0 62 65" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto bg-gray-100 dark:bg-gray-900">
-                        <path d="M61.8548 14.6253C61.8778 14.7102 61.8895 14.7978 61.8897 14.8858V28.5615C61.8898 28.737 61.8434 28.9095 61.7554 29.0614C61.6675 29.2132 61.5409 29.3392 61.3887 29.4265L49.9104 36.0351V49.1337C49.9104 49.4902 49.7209 49.8192 49.4118 49.9987L25.4519 63.7916C25.3971 63.8227 25.3372 63.8427 25.2774 63.8639C25.255 63.8714 25.2338 63.8851 25.2101 63.8913C25.0426 63.9354 24.8666 63.9354 24.6991 63.8913C24.6716 63.8838 24.6467 63.8689 24.6205 63.8589C24.5657 63.8389 24.5084 63.8215 24.456 63.7916L0.501061 49.9987C0.348882 49.9113 0.222437 49.7853 0.134469 49.6334C0.0465019 49.4816 0.000120578 49.3092 0 49.1337L0 8.10652C0 8.01678 0.0124642 7.92953 0.0348998 7.84477C0.0423783 7.8161 0.0598282 7.78993 0.0697995 7.76126C0.0884958 7.70891 0.105946 7.65531 0.133367 7.6067C0.152063 7.5743 0.179485 7.54812 0.20192 7.51821C0.230588 7.47832 0.256763 7.43719 0.290416 7.40229C0.319084 7.37362 0.356476 7.35243 0.388883 7.32751C0.425029 7.29759 0.457436 7.26518 0.498568 7.2415L12.4779 0.345059C12.6296 0.257786 12.8015 0.211853 12.9765 0.211853C13.1515 0.211853 13.3234 0.257786 13.475 0.345059L25.4531 7.2415H25.4556C25.4955 7.26643 25.5292 7.29759 25.5653 7.32626C25.5977 7.35119 25.6339 7.37362 25.6625 7.40104C25.6974 7.43719 25.7224 7.47832 25.7523 7.51821C25.7735 7.54812 25.8021 7.5743 25.8196 7.6067C25.8483 7.65656 25.8645 7.70891 25.8844 7.76126C25.8944 7.78993 25.9118 7.8161 25.9193 7.84602C25.9423 7.93096 25.954 8.01853 25.9542 8.10652V33.7317L35.9355 27.9844V14.8846C35.9355 14.7973 35.948 14.7088 35.9704 14.6253C35.9792 14.5954 35.9954 14.5692 36.0053 14.5405C36.0253 14.4882 36.0427 14.4346 36.0702 14.386C36.0888 14.3536 36.1163 14.3274 36.1375 14.2975C36.1674 14.2576 36.1923 14.2165 36.2272 14.1816C36.2559 14.1529 36.292 14.1317 36.3244 14.1068C36.3618 14.0769 36.3942 14.0445 36.4341 14.0208L48.4147 7.12434C48.5663 7.03694 48.7383 6.99094 48.9133 6.99094C49.0883 6.99094 49.2602 7.03694 49.4118 7.12434L61.3899 14.0208C61.4323 14.0457 61.4647 14.0769 61.5021 14.1055C61.5333 14.1305 61.5694 14.1529 61.5981 14.1803C61.633 14.2165 61.6579 14.2576 61.6878 14.2975C61.7103 14.3274 61.7377 14.3536 61.7551 14.386C61.7838 14.4346 61.8 14.4882 61.8199 14.5405C61.8312 14.5692 61.8474 14.5954 61.8548 14.6253ZM59.893 27.9844V16.6121L55.7013 19.0252L49.9104 22.3593V33.7317L59.8942 27.9844H59.893ZM47.9149 48.5566V37.1768L42.2187 40.4299L25.953 49.7133V61.2003L47.9149 48.5566ZM1.99677 9.83281V48.5566L23.9562 61.199V49.7145L12.4841 43.2219L12.4804 43.2194L12.4754 43.2169C12.4368 43.1945 12.4044 43.1621 12.3682 43.1347C12.3371 43.1097 12.3009 43.0898 12.2735 43.0624L12.271 43.0586C12.2386 43.0275 12.2162 42.9888 12.1887 42.9539C12.1638 42.9203 12.1339 42.8916 12.114 42.8567L12.1127 42.853C12.0903 42.8156 12.0766 42.7707 12.0604 42.7283C12.0442 42.6909 12.023 42.656 12.013 42.6161C12.0005 42.5688 11.998 42.5177 11.9931 42.4691C11.9881 42.4317 11.9781 42.3943 11.9781 42.3569V15.5801L6.18848 12.2446L1.99677 9.83281ZM12.9777 2.36177L2.99764 8.10652L12.9752 13.8513L22.9541 8.10527L12.9752 2.36177H12.9777ZM18.1678 38.2138L23.9574 34.8809V9.83281L19.7657 12.2459L13.9749 15.5801V40.6281L18.1678 38.2138ZM48.9133 9.14105L38.9344 14.8858L48.9133 20.6305L58.8909 14.8846L48.9133 9.14105ZM47.9149 22.3593L42.124 19.0252L37.9323 16.6121V27.9844L43.7219 31.3174L47.9149 33.7317V22.3593ZM24.9533 47.987L39.59 39.631L46.9065 35.4555L36.9352 29.7145L25.4544 36.3242L14.9907 42.3482L24.9533 47.987Z" fill="#FF2D20"/>
-                    </svg>
+    <div class="relative -mt-12 lg:-mt-24">
+        <svg viewBox="0 0 1428 174" version="1.1" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g transform="translate(-2.000000, 44.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                    <path
+                        d="M0,0 C90.7283404,0.927527913 147.912752,27.187927 291.910178,59.9119003 C387.908462,81.7278826 543.605069,89.334785 759,82.7326078 C469.336065,156.254352 216.336065,153.6679 0,74.9732496"
+                        opacity="0.100000001"></path>
+                    <path
+                        d="M100,104.708498 C277.413333,72.2345949 426.147877,52.5246657 546.203633,45.5787101 C666.259389,38.6327546 810.524845,41.7979068 979,55.0741668 C931.069965,56.122511 810.303266,74.8455141 616.699903,111.243176 C423.096539,147.640838 250.863238,145.462612 100,104.708498 Z"
+                        opacity="0.100000001"></path>
+                    <path
+                        d="M1046,51.6521276 C1130.83045,29.328812 1279.08318,17.607883 1439,40.1656806 L1439,120 C1271.17211,77.9435312 1140.17211,55.1609071 1046,51.6521276 Z"
+                        id="Path-4" opacity="0.200000003"></path>
+                </g>
+                <g transform="translate(-4.000000, 76.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                    <path
+                        d="M0.457,34.035 C57.086,53.198 98.208,65.809 123.822,71.865 C181.454,85.495 234.295,90.29 272.033,93.459 C311.355,96.759 396.635,95.801 461.025,91.663 C486.76,90.01 518.727,86.372 556.926,80.752 C595.747,74.596 622.372,70.008 636.799,66.991 C663.913,61.324 712.501,49.503 727.605,46.128 C780.47,34.317 818.839,22.532 856.324,15.904 C922.689,4.169 955.676,2.522 1011.185,0.432 C1060.705,1.477 1097.39,3.129 1121.236,5.387 C1161.703,9.219 1208.621,17.821 1235.4,22.304 C1285.855,30.748 1354.351,47.432 1440.886,72.354 L1441.191,104.352 L1.121,104.031 L0.457,34.035 Z">
+                    </path>
+                </g>
+            </g>
+        </svg>
+    </div>
+
+    <!-- Section Layanan -->
+    <section id="layanan" class="bg-white border-b py-8">
+        <div data-aos="fade-right" data-aos-delay="200" class="bg-white p-8 shadow-lg rounded-lg">
+            <div class="container max-w-5xl mx-auto m-8">
+                <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800" id="layanan">
+                    Layanan
+                </h1>
+                <div class="w-full mb-4">
+                    <div class="h-1 mx-auto gradient w-64 opacity-25 my-0 py-0 rounded-t"></div>
                 </div>
 
-                <div class="mt-16">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-                        <a href="https://laravel.com/docs" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Documentation</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel has wonderful documentation covering every aspect of the framework. Whether you are a newcomer or have prior experience with Laravel, we recommend reading our documentation from beginning to end.
-                                </p>
-                            </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
+                <!-- Peminjaman Ruang -->
+                <div
+                    class="flex flex-wrap rounded shadow mb-4 
+                    hover:shadow-xl hover:bg-gradient-to-r from-blue-300 to-sky-600 text-white 
+                    hover:-translate-y-1 hover:scale-105 hover:-rotate-1
+                    group transform transition ease-out duration-300">
+                    <div class="flex flex-col items-center w-5/6 sm:w-1/2 pl-8 py-8">
+                        <h3 class="text-3xl text-gray-800 group-hover:text-white font-bold leading-none mb-3">
+                            Peminjaman Ruang
+                        </h3>
+                        <p class="text-justify leading-relaxed tracking-wide max-w-xl text-gray-600 group-hover:text-white">
+                            Jika Anda ingin menggunakan Laboratorium Komputer di luar jam perkuliahan, silakan ajukan permohonan terlebih dahulu untuk memastikan ketersediaan fasilitas dan mendapatkan akses sesuai kebutuhan Anda.
+                        </p>
+                        <a href="{{ route('peminjamanlab') }}"
+                            class="mb-8 mt-auto px-6 py-3 text-lg font-semibold text-white bg-gradient-to-r from-indigo-600 to-blue-500 
+                            rounded-full shadow-lg hover:from-blue-500 hover:to-indigo-600 hover:text-white 
+                            transform hover:scale-110 transition duration-300 ease-in-out">
+                            Selengkapnya
                         </a>
-
-                        <a href="https://laracasts.com" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Laracasts</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </p>
-                            </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <a href="https://laravel-news.com" class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Laravel News</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </p>
-                            </div>
-
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="self-center shrink-0 stroke-red-500 w-6 h-6 mx-6">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                            </svg>
-                        </a>
-
-                        <div class="scale-100 p-6 bg-white dark:bg-gray-800/50 dark:bg-gradient-to-bl from-gray-700/50 via-transparent dark:ring-1 dark:ring-inset dark:ring-white/5 rounded-lg shadow-2xl shadow-gray-500/20 dark:shadow-none flex motion-safe:hover:scale-[1.01] transition-all duration-250 focus:outline focus:outline-2 focus:outline-red-500">
-                            <div>
-                                <div class="h-16 w-16 bg-red-50 dark:bg-red-800/20 flex items-center justify-center rounded-full">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" class="w-7 h-7 stroke-red-500">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.115 5.19l.319 1.913A6 6 0 008.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 002.288-4.042 1.087 1.087 0 00-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 01-.98-.314l-.295-.295a1.125 1.125 0 010-1.591l.13-.132a1.125 1.125 0 011.3-.21l.603.302a.809.809 0 001.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 001.528-1.732l.146-.292M6.115 5.19A9 9 0 1017.18 4.64M6.115 5.19A8.965 8.965 0 0112 3c1.929 0 3.716.607 5.18 1.64" />
-                                    </svg>
-                                </div>
-
-                                <h2 class="mt-6 text-xl font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</h2>
-
-                                <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Forge</a>, <a href="https://vapor.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Vapor</a>, <a href="https://nova.laravel.com" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Nova</a>, and <a href="https://envoyer.io" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Telescope</a>, and more.
-                                </p>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="w-full sm:w-1/2 pr-8 py-8">
+                        <svg class="w-full sm:h-64 mx-auto" id="a3fb4343-95d2-4a83-b68f-ed4eefcf6705" data-name="Layer 1"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 715.29587 604.16998">
+                            <path d="M948.01805,354.635q1.25976,4.92,2.36035,9.89H700.64793v-9.89Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#e6e6e6" />
+                            <path
+                                d="M940.05813,328.565a305.61151,305.61151,0,0,0-14.04-33.26q-2.46-4.995-5.11-9.89c-.29-.56-.6-1.12-.91-1.68v73.6h21.58v-24.39Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#e6e6e6" />
+                            <path d="M926.01805,295.305h-6.02V285.415h.91016Q923.56322,290.305,926.01805,295.305Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#ccc" />
+                            <polygon
+                                points="697.706 180.65 677.646 180.65 677.646 190.54 699.226 190.54 699.226 185.03 697.706 180.65"
+                                fill="#ccc" />
+                            <rect x="644.38463" y="124.017" width="21.57574" height="85.4041" fill="#e6e6e6" />
+                            <rect x="644.38463" y="137.50186" width="21.57574" height="9.8889" fill="#ccc" />
+                            <rect x="644.38463" y="180.65341" width="21.57574" height="9.8889" fill="#ccc" />
+                            <path
+                                d="M809.918,271.435h-77.3999a4.50681,4.50681,0,0,0-4.5,4.5v77.4a4.65641,4.65641,0,0,0,.18994,1.3,4.50994,4.50994,0,0,0,4.31006,3.2H809.918a4.50948,4.50948,0,0,0,4.31006-3.2,4.63848,4.63848,0,0,0,.18994-1.3v-77.4A4.50681,4.50681,0,0,0,809.918,271.435Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#e6e6e6" />
+                            <path
+                                d="M804.418,276.935h-66.3999a4.50681,4.50681,0,0,0-4.5,4.5v66.4a4.50681,4.50681,0,0,0,4.5,4.5H804.418a4.50681,4.50681,0,0,0,4.5-4.5v-66.4A4.50681,4.50681,0,0,0,804.418,276.935Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#fff" />
+                            <path
+                                d="M792.83836,288.515H749.59813a4.50681,4.50681,0,0,0-4.5,4.5v43.24a4.50676,4.50676,0,0,0,4.5,4.5h43.24023a4.52349,4.52349,0,0,0,4.5-4.5v-43.24A4.50681,4.50681,0,0,0,792.83836,288.515Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#ccc" />
+                            <path
+                                d="M790.17235,328.62827l-9.13281-15.819a2.00023,2.00023,0,0,0-3.46436,0l-6.66895,11.55108-8.74609-15.14728a1.99984,1.99984,0,0,0-3.46387.00007l-9.1333,15.81909-10.86474,18.819H759.6533l-2.07617,3.596h43.46094Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#fff" />
+                            <circle cx="544.59673" cy="150.08772" r="6.29292" fill="#fff" />
+                            <path
+                                d="M957.56834,424.515q-.10547-5.82-.46045-11.58c-.0996-1.84-.21972-3.67-.36962-5.5H914.51805a4.50681,4.50681,0,0,0-4.5,4.5v77.4a4.08953,4.08953,0,0,0,.12988,1.05,4.50432,4.50432,0,0,0,4.37012,3.45H953.438c.2002-1.14.39014-2.3.56006-3.45.10986-.68.22022-1.37.32031-2.05.23975-1.63.46973-3.26.67969-4.89q.45043-3.33.81006-6.69,1.31982-12.04494,1.7002-24.35v-.01q.13476-4.635.13964-9.31v-12C957.64793,428.885,957.6284,426.695,957.56834,424.515Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#e6e6e6" />
+                            <path
+                                d="M957.56834,424.515q-.10547-5.82-.46045-11.58H920.01805a4.50681,4.50681,0,0,0-4.5,4.5v66.4a4.50681,4.50681,0,0,0,4.5,4.5h34.30029c.23975-1.63.46973-3.26.67969-4.89q.45043-3.33.81006-6.69,1.31982-12.04494,1.7002-24.35v-.01q.13476-4.635.13964-9.31v-12C957.64793,428.885,957.6284,426.695,957.56834,424.515Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#fff" />
+                            <path
+                                d="M957.56834,424.515H931.59813a4.50681,4.50681,0,0,0-4.5,4.5v43.24a4.50676,4.50676,0,0,0,4.5,4.5h24.21q1.31982-12.04494,1.7002-24.35v-.01q.13476-4.635.13964-9.31v-12C957.64793,428.885,957.6284,426.695,957.56834,424.515Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#ccc" />
+                            <path
+                                d="M957.50829,452.405q-.375,12.3-1.7002,24.35-.35962,3.36-.81006,6.69H939.57811l2.08008-3.59h-20.96l6.3999-11.09,4.46-7.73,9.14014-15.82a1.99145,1.99145,0,0,1,3.46,0l8.75,15.15Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#fff" />
+                            <path d="M881.73827,228.785H700.64793v-9.89H872.75829Q877.34837,223.74,881.73827,228.785Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#e6e6e6" />
+                            <path d="M796.83836,160.195q11.06984,6.09,21.57959,13.05v48.34H796.83836Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#e6e6e6" />
+                            <rect x="554.48565" y="44.90582" width="21.57574" height="9.8889" fill="#ccc" />
+                            <path
+                                d="M851.67821,198.645v22.94H830.09813v-40.21q7.54541,5.50506,14.75,11.45Q848.29783,195.675,851.67821,198.645Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#e6e6e6" />
+                            <path d="M851.67821,198.645v4.06H830.09813v-9.88h14.75Q848.29783,195.675,851.67821,198.645Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#ccc" />
+                            <path
+                                d="M774.80809,149.175q8.56494,3.85491,16.83984,8.22l-4.43994,8.96-14.75,29.81-4.38965,8.86-6.87011,13.87-1.51026,3.05-6.1499-3.05-13.18018-6.53,8.37012-16.92h.01026l4.37988-8.86,14.76025-29.81,4.33985-8.76.0498-.1Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#e6e6e6" />
+                            <polygon
+                                points="549.246 9.57 544.856 18.44 525.526 8.86 529.866 0.1 529.916 0 532.456 1.26 549.246 9.57"
+                                fill="#ccc" />
+                            <rect x="755.6482" y="185.01745" width="9.8889" height="21.57574"
+                                transform="translate(5.29589 642.64123) rotate(-63.6604)" fill="#ccc" />
+                            <path
+                                d="M953.998,490.385c-.16992,1.15-.35986,2.31-.56006,3.45-.34961,2.16-.73,4.3-1.13965,6.44H700.64793v-9.89Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#e6e6e6" />
+                            <rect x="554.48565" y="259.76454" width="21.57574" height="85.40411" fill="#e6e6e6" />
+                            <rect x="554.48565" y="273.24943" width="21.57574" height="9.88889" fill="#ccc" />
+                            <rect x="554.48565" y="316.40098" width="21.57574" height="9.88889" fill="#ccc" />
+                            <rect x="587.74828" y="259.76454" width="21.57574" height="85.40411" fill="#e6e6e6" />
+                            <rect x="587.74828" y="273.24943" width="21.57574" height="9.88889" fill="#ccc" />
+                            <rect x="587.74828" y="316.40098" width="21.57574" height="9.88889" fill="#ccc" />
+                            <rect x="726.26691" y="439.59375" width="85.40411" height="21.57574"
+                                transform="translate(-218.19047 791.77108) rotate(-63.6604)" fill="#e6e6e6" />
+                            <rect x="774.79411" y="417.84108" width="9.88889" height="21.57574"
+                                transform="translate(-192.70495 789.32135) rotate(-63.6604)" fill="#ccc" />
+                            <rect x="755.64818" y="456.51258" width="9.88889" height="21.57574"
+                                transform="translate(-238.01263 793.67647) rotate(-63.6604)" fill="#ccc" />
+                            <path
+                                d="M535.15014,528.49686a19.79134,19.79134,0,0,1,2.57027,1.762L626.74915,502.553l5.02034-22.08811,34.32513,3.21966-5.08744,39.96635a15.0408,15.0408,0,0,1-12.56839,12.95649L543.66567,553.19537a19.73558,19.73558,0,1,1-8.51553-24.69851Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#ffb8b8" />
+                            <path
+                                d="M681.958,496.935l-.58984-10.08v-.01l-.16016-2.76-1.73974-29.68a23.47273,23.47273,0,0,0-21.33008-25.35,23.14957,23.14957,0,0,0-5.33985.14,23.54326,23.54326,0,0,0-20.15039,21.18l-3.60986,15.02-6.31006,26.27a8.41756,8.41756,0,0,0,4.34033,9.48,8.27547,8.27547,0,0,0,3.12989.92l10.52.94,10.12988.9,11.68994,1.04.84033.07,2.15967.2,7.23.64h.02a8.56288,8.56288,0,0,0,6.62012-2.36005,8.58059,8.58059,0,0,0,1.58984-2.12,8.24536,8.24536,0,0,0,.96-4.44Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#6c63ff" />
+                            <path
+                                d="M779.65374,374.70751c0,34.22533-31.64676,29.04864-70.685,29.04864s-70.685,5.17669-70.685-29.04864,15.45864-94.89222,70.685-94.89222C766.09771,279.81529,779.65374,340.48219,779.65374,374.70751Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#2f2e41" />
+                            <circle cx="708.73237" cy="356.13468" r="47.56429"
+                                transform="translate(-286.59441 457.54389) rotate(-45)" fill="#ffb8b8" />
+                            <path
+                                d="M775.688,423.695a29.37016,29.37016,0,0,0-2.90967-2.46,30.91983,30.91983,0,0,0-22.63037-5.99006l-87.6499,11.09a31.11934,31.11934,0,0,0-27.1499,33.78c.25,2.8.53027,5.75.83984,8.82.40039,3.85.8501,7.89,1.37012,12.07.85986,7.03,1.91016,14.45,3.16016,22,1.08984,6.5,2.33007,13.09,3.75,19.6q.61523,2.82,1.27978,5.62a.03607.03607,0,0,0,.01026.03c.0498.23005.0996.46.15966.68a.07353.07353,0,0,0,.01026.05q.93016,3.9,1.95019,7.71c.25977.94.50977,1.87.76953,2.79.7002,2.5,1.44043,4.95,2.2002,7.36,5.71,17.93,13.25976,33.2,23.23,41.32.12988.12.26025.22.3999.32995l.40039.31.57959-.18,2.46-.73,2.1001-.64,27.36035-8.23,6.80957-2.05,21.88037-6.59h.00977l20.01025-6.02,2.43994-.74,17.19-5.17.5498-6.42.74024-8.52.43994-5.12,3.48-40.38,2.02978-23.56,2.2002-25.58A31.07666,31.07666,0,0,0,775.688,423.695Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#2f2e41" />
+                            <path
+                                d="M824.69823,619.085c-.23-.67-.4502-1.34-.68018-2-10.27978-30-25.43994-52.69-47.75-65.05-.00976,0-.00976-.01-.02-.01l-.37988-.21-19.43994,6.73-2.39991.83-2.5.87-.03027.01-18.19971,6.3-.03027.01-14.27978,4.94H718.978l-13.21,4.57h-.00976l-3.07032,1.07-23.08984,7.99-2.68018.93-2.3999.83-.37012.13-.06982,1.14-1.6499,28.92-.10987,2-2.06005,36.09-68.41016,96.91h46.7998a308.16253,308.16253,0,0,0,46.84034-3.57l43.90966-47.32a2.9075,2.9075,0,0,1,4.94043,1.44l6.44971,32a309.22958,309.22958,0,0,0,88-48.42C835.708,661.365,831.208,638.715,824.69823,619.085Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#2f2e41" />
+                            <path
+                                d="M653.77631,351.46855v0H672.5889l8.29947-23.23891,1.65952,23.23891h8.99165l4.84144-13.556.96829,13.556h66.81187v0a50.35092,50.35092,0,0,0-50.35093-50.35092h-9.683A50.35092,50.35092,0,0,0,653.77631,351.46855Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#2f2e41" />
+                            <path
+                                d="M538.06146,603.47244a22.78775,22.78775,0,0,1-31.05941-16.00863l-80.46558-9.11312,26.973-32.30021,72.27622,13.606a22.91124,22.91124,0,0,1,12.27573,43.816Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#a0616a" />
+                            <path
+                                d="M494.67821,543.685l-34.01026-6.08-2.46972-.44a14.21295,14.21295,0,0,1-11.10987-18.09l16.69971-55.49.5-1.65a32.46828,32.46828,0,0,0-15.23-37.51,32.27694,32.27694,0,0,0-47.02,20.54l-21.2998,86.93-.79,3.22a43.43889,43.43889,0,0,0,38.16992,53.6c.06982.01.12988.01.20019.02l12.75,1.13,16.53955,1.47,20.8003,1.85,19.41015,1.73a10.17352,10.17352,0,0,0,10.94-8.38c.02978-.14.0498-.28.06982-.42l4.12012-30.76.04-.28A10.17007,10.17007,0,0,0,494.67821,543.685Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#ccc" />
+                            <path
+                                d="M442.27994,310.61657c-13.57683,26.69293-24.277,54.22413-54.22412,54.22413a54.22413,54.22413,0,0,1-54.22413-54.22413c0-29.94715,24.27906-53.84919,54.22413-54.22412C418.4907,256.01137,467.55,260.933,442.27994,310.61657Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#2f2e41" />
+                            <path
+                                d="M476.33836,659.815l-1.23047-12.28-.91992.05L312.498,655.375l.41992,12.43.71045,21.29a308.81037,308.81037,0,0,0,82.38965,44.85l1.05029-8.14a2.90385,2.90385,0,0,1,5.67969-.36l3.18994,11.89a305.31881,305.31881,0,0,0,79.59033,14.41Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#2f2e41" />
+                            <circle cx="390.72433" cy="318.33238" r="47.5643"
+                                transform="translate(-353.00655 221.60621) rotate(-45)" fill="#a0616a" />
+                            <path
+                                d="M485.6284,648.365l-9.43017-29.28-.16016-.5-.48-1.5-2.68994-8.34c-.87012-2.71-1.7002-5.43-2.47022-8.16q-1.06494-3.69-1.98974-7.4-1.31984-5.16-2.3999-10.36a256.72524,256.72524,0,0,1-4.87012-35.33q-.33033-4.935-.47022-9.88995a255.64018,255.64018,0,0,1,5.43018-60.31,81.78628,81.78628,0,0,0-40.33984-88.57,80.416,80.416,0,0,0-32.64014-9.79c-.79-.06-1.58008-.11-2.37988-.16a80.96226,80.96226,0,0,0-64.94,26.26,82.57424,82.57424,0,0,0-11.32031,15.68,81.446,81.446,0,0,0-9.31982,51.69l11.23974,75.47-2.55957,31.77-3.02,37.44-.16015,2-3.22022,39.92a8.69417,8.69417,0,0,0,5.48,8.8,8.50982,8.50982,0,0,0,3.2002.61005c.16015,0,.31006,0,.47021-.01l159.75-8.59,1.46-.08a8.70416,8.70416,0,0,0,7.83008-11.37Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#ccc" />
+                            <path
+                                d="M441.1975,291.45155a64.691,64.691,0,0,1-36.97056,11.42551,39.64324,39.64324,0,0,0,15.71262,6.4643,130.44529,130.44529,0,0,1-53.28286.29939,34.48533,34.48533,0,0,1-11.15425-3.831c-3.37787-2.05046-6.20359-5.31552-6.88493-9.20785-1.169-6.67831,4.03481-12.74571,9.44275-16.8348a69.6535,69.6535,0,0,1,58.532-11.69631c6.5384,1.6901,13.08839,4.54566,17.33526,9.79648s5.50486,13.34591,1.45867,18.75289Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#2f2e41" />
+                            <path
+                                d="M443.62927,593.57759a22.78777,22.78777,0,0,1-31.39874-15.33241l-80.644-7.36881,26.26738-32.87663,72.55386,12.03789a22.91125,22.91125,0,0,1,13.22153,43.54Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#a0616a" />
+                            <path
+                                d="M398.96825,534.745l-18.23-2.85-18.39014-2.88a14.211,14.211,0,0,1-11.5-17.84l15.96-57.5a32.4688,32.4688,0,0,0-16.04-37.17005,31.98313,31.98313,0,0,0-28.60986-.75,32.07774,32.07774,0,0,0-17.9502,22.29l-20.12988,90.61a43.46415,43.46415,0,0,0,39.51025,52.78l69.62989,4.67A10.18509,10.18509,0,0,0,403.978,577.495c.03028-.13995.04-.28.06006-.42l3.4502-30.84.02978-.28A10.17894,10.17894,0,0,0,398.96825,534.745Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#ccc" />
+                            <path
+                                d="M707.44512,486.94456l-4.173,2.27685L651.8605,517.27273l-4.173,2.27685a8.71537,8.71537,0,0,0-3.47236,11.8117l38.28506,70.16778a8.71535,8.71535,0,0,0,11.81168,3.47238l.01078-.00588,59.736-32.59327.01078-.00588a8.71535,8.71535,0,0,0,3.47237-11.81168L719.2568,490.417A8.71535,8.71535,0,0,0,707.44512,486.94456Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#e6e6e6" />
+                            <path
+                                d="M708.64555,489.14449l-4.94258,2.69678L653.8304,519.05283l-4.9425,2.69673a6.2064,6.2064,0,0,0-2.47276,8.41138l38.28506,70.16778a6.20638,6.20638,0,0,0,8.41137,2.47274l.01078-.00588,59.736-32.59326.01085-.00593a6.20637,6.20637,0,0,0,2.4727-8.41132l-38.28507-70.16778A6.20638,6.20638,0,0,0,708.64555,489.14449Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#fff" />
+                            <path
+                                d="M710.04832,508.955a1.45948,1.45948,0,0,0-1.97021-.58l-1.98975,1.09-20.29,11.07a1.45206,1.45206,0,0,0,1.38965,2.55l22.28028-12.16A1.45963,1.45963,0,0,0,710.04832,508.955Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#e6e6e6" />
+                            <path
+                                d="M717.63817,510.385a1.43548,1.43548,0,0,0-1.96-.57l-27.53028,15.02a1.44776,1.44776,0,1,0,1.39014,2.54l1.28027-.69995,8.00977-4.37006h.01025l18.21973-9.95A1.43939,1.43939,0,0,0,717.63817,510.385Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#e6e6e6" />
+                            <path
+                                d="M687.71825,534.325l-8.74024-16.03a.70192.70192,0,0,0-.94971-.27l-4.24023,2.31-2.19971,1.2-11.81006,6.44-2.29,1.25a.70222.70222,0,0,0-.27.95l.56,1.03,8.17969,15a.69309.69309,0,0,0,.93994.27l14.1001-7.69,2.2002-1.2,4.23974-2.31A.69677.69677,0,0,0,687.71825,534.325Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#e6e6e6" />
+                            <path
+                                d="M721.09813,529.295a1.44744,1.44744,0,0,0-1.96-.58L688.918,545.205a1.44975,1.44975,0,0,0-.73,1.53,1.21141,1.21141,0,0,0,.15039.44,1.47285,1.47285,0,0,0,.29.37l.00977.01a1.462,1.462,0,0,0,1.66992.2l30.22021-16.49A1.44715,1.44715,0,0,0,721.09813,529.295Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#e6e6e6" />
+                            <path
+                                d="M728.69823,530.725a1.44981,1.44981,0,0,0-1.97022-.57l-35.46972,19.35a1.41479,1.41479,0,0,0-.73,1.51v.01a1.20984,1.20984,0,0,0,.14991.44,1.39909,1.39909,0,0,0,.2998.38,1.42971,1.42971,0,0,0,1.66992.2l35.47022-19.35A1.45655,1.45655,0,0,0,728.69823,530.725Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#e6e6e6" />
+                            <circle cx="436.4441" cy="407.19056" r="6.15041" fill="#e6e6e6" />
+                            <path
+                                d="M725.44512,459.94456l-4.173,2.27685L669.8605,490.27273l-4.173,2.27685a8.71537,8.71537,0,0,0-3.47236,11.8117l38.28506,70.16778a8.71535,8.71535,0,0,0,11.81168,3.47238l.01078-.00588,59.736-32.59327.01078-.00588a8.71535,8.71535,0,0,0,3.47237-11.81168L737.2568,463.417A8.71535,8.71535,0,0,0,725.44512,459.94456Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#ccc" />
+                            <path
+                                d="M726.64555,462.14449l-4.94258,2.69678L671.8304,492.05283l-4.9425,2.69673a6.2064,6.2064,0,0,0-2.47276,8.41138l38.28506,70.16778a6.20638,6.20638,0,0,0,8.41137,2.47274l.01078-.00588,59.736-32.59326.01085-.00593a6.20637,6.20637,0,0,0,2.4727-8.41132l-38.28507-70.16778A6.20638,6.20638,0,0,0,726.64555,462.14449Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#fff" />
+                            <path
+                                d="M728.04832,481.955a1.45948,1.45948,0,0,0-1.97021-.58l-10.25977,5.6-2.86035,1.56-9.15967,5a1.45206,1.45206,0,0,0,1.38965,2.55l10.8003-5.89,2.25976-1.24,9.22022-5.03A1.45963,1.45963,0,0,0,728.04832,481.955Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#ccc" />
+                            <path
+                                d="M735.63817,483.385a1.43548,1.43548,0,0,0-1.96-.57l-14.31006,7.81-2.2002,1.2-11.02,6.01a1.44776,1.44776,0,1,0,1.39014,2.54l11.02-6.01,2.2002-1.2,14.2998-7.81A1.43939,1.43939,0,0,0,735.63817,483.385Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#ccc" />
+                            <path
+                                d="M705.71825,507.325l-6.97022-12.78-1.19971-2.2-.57031-1.05a.70192.70192,0,0,0-.94971-.27l-14.1499,7.72-6.39013,3.48005a.70222.70222,0,0,0-.27.95l.56982,1.04.62012,1.15.58008,1.05v.01l6.96972,12.78a.69309.69309,0,0,0,.93994.27l20.54-11.2A.69677.69677,0,0,0,705.71825,507.325Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#6c63ff" />
+                            <path
+                                d="M739.09813,502.295a1.44744,1.44744,0,0,0-1.96-.58l-9.03028,4.93-2.1997,1.2-8.72022,4.75-10.27,5.61a1.45214,1.45214,0,0,0,1.39014,2.55l18.99023-10.36,2.19971-1.2,9.03027-4.93A1.44715,1.44715,0,0,0,739.09813,502.295Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#ccc" />
+                            <path
+                                d="M746.69823,503.725a1.44981,1.44981,0,0,0-1.97022-.57l-14.27,7.79-2.1997,1.2-19,10.36a1.44766,1.44766,0,1,0,1.38964,2.54l18.99024-10.36,2.20019-1.2,14.27979-7.79A1.45655,1.45655,0,0,0,746.69823,503.725Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#ccc" />
+                            <circle cx="454.4441" cy="380.19056" r="6.15041" fill="#ccc" />
+                            <path
+                                d="M700.92771,562.68332a19.79115,19.79115,0,0,1,3.06756.54874l69.75009-61.87614-4.5103-22.19787,32.61085-11.18542,11.80356,38.521a15.04079,15.04079,0,0,1-6.12594,16.97964l-88.67413,58.2191a19.73558,19.73558,0,1,1-17.92169-19.009Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#ffb8b8" />
+                            <path
+                                d="M821.75829,473.515,801.998,435.775a23.47654,23.47654,0,0,0-29.21973-14.54c-.22021.06-.43017.13-.6499.21a23.52681,23.52681,0,0,0-14.46045,29.93l7.93018,41.71a8.44646,8.44646,0,0,0,4.08008,5.74,8.25123,8.25123,0,0,0,3.77978,1.12,8.13863,8.13863,0,0,0,3.23-.45l4.24024-1.48,27.21972-9.48,8.90039-3.1a8.47065,8.47065,0,0,0,4.71-11.92Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#6c63ff" />
+                            <path d="M896.35207,619.085h-653a1,1,0,0,1,0-2h653a1,1,0,0,1,0,2Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#3f3d56" />
+                            <path
+                                d="M355.84813,600.585v.5a17.5147,17.5147,0,0,0,10.43017,16,17.23214,17.23214,0,0,0,7.06983,1.5h161.5v-18Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#3f3d56" />
+                            <path
+                                d="M647.60789,481.955a32.59279,32.59279,0,0,0-11.41992-13.02,31.97294,31.97294,0,0,0-7.1499-3.54,32.37532,32.37532,0,0,0-10.68994-1.81h-155a32.53759,32.53759,0,0,0-32.5,32.5v90a31.37346,31.37346,0,0,0,.22021,3.78,32.78466,32.78466,0,0,0,1.13965,5.54,31.94021,31.94021,0,0,0,2.06006,5.18,32.46476,32.46476,0,0,0,29.08008,18h155a32.48771,32.48771,0,0,0,32.5-32.5v-90A32.22154,32.22154,0,0,0,647.60789,481.955Z"
+                                transform="translate(-242.35207 -147.91501)" fill="#3f3d56" />
+                            <circle cx="306.99606" cy="393.16998" r="8" fill="#fff" />
+                        </svg>
                     </div>
                 </div>
 
-                <div class="flex justify-center mt-16 px-0 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm sm:text-left">
-                        &nbsp;
+                <!-- Peminjaman Alat -->
+                <div
+                    class="flex flex-wrap rounded shadow mb-4 
+                    hover:shadow-xl hover:bg-gradient-to-r from-sky-600 to-blue-300 text-white 
+                    hover:-translate-y-1 hover:scale-105 hover:rotate-1
+                    group transform transition ease-out duration-300">
+                    <div class="w-full sm:w-1/2 pr-8 py-8 mt-6">
+                        <svg class="w-full sm:h-64 mx-auto" id="f1ba0080-3221-4c35-b110-ed68464d7aea" data-name="Layer 1"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 978 813.6343">
+                            <title>circuit</title>
+                            <path
+                                d="M459.52874,779.69641l-1.87485,26.24794v14.99882s-3.74971,39.3719,31.87249,35.62219,5.62455-59.99528,5.62455-59.99528l-3.7497-11.24911Z"
+                                transform="translate(-111 -43.18285)" fill="#2f2e41" />
+                            <path
+                                d="M506.40005,721.576s-11.24912,3.7497-7.49941,28.12279c0,0,9.37426,7.4994,18.74852,11.24911a31.599,31.599,0,0,1,9.50867,6.44072A73.48525,73.48525,0,0,0,562.05589,785.985c8.88925,1.89373,17.05328,1.67952,19.33825-4.41375,5.62456-14.99882-22.49823-28.12279-22.49823-28.12279L536.39769,729.0754Z"
+                                transform="translate(-111 -43.18285)" fill="#2f2e41" />
+                            <path d="M626.3906,470.34577s33.74734,44.99646,16.87367,46.87131-29.99764-39.3719-29.99764-39.3719Z"
+                                transform="translate(-111 -43.18285)" fill="#fbbebe" />
+                            <path
+                                d="M476.40241,442.223l-3.7497,131.23966s-7.49941,24.37308-5.62456,35.6222c0,0-3.17782,12.71127-3.68252,17.65555-.04354.4265-.06719.7952-.06719,1.093,0,3.74971-14.99882,67.49469-5.62455,112.49114,0,0-9.37427,35.6222,1.87485,44.99646l35.62219,1.87485-1.87485-69.36953,18.74853-104.99174,9.37426-28.12278s-14.99882,78.7438-11.24912,104.99173c0,0-7.49941,22.49823-5.62455,35.62219,0,0,1.87485,16.87368,33.74734,5.62456l5.62456-29.99764L589.50142,465.7973l-43.72947-19.82461Z"
+                                transform="translate(-111 -43.18285)" fill="#2f2e41" />
+                            <circle cx="449.77077" cy="160.93388" r="33.74734" fill="#fbbebe" />
+                            <polygon points="420.711 165.621 407.587 193.744 441.334 216.242 458.208 186.244 420.711 165.621"
+                                fill="#fbbebe" />
+                            <path
+                                d="M558.89591,256.6126l-.54015-7.8932s-24.75381-10.22118-35.54248-20.84994l-8.91382,6.24491-52.49587,24.37308L480.15211,455.347s33.74735-3.7497,54.37072,18.74853,56.24557-9.37427,56.24557-9.37427V410.3505l-9.37426-61.87013,9.37426-67.49469Z"
+                                transform="translate(-111 -43.18285)" fill="#d0cde1" />
+                            <path
+                                d="M577.64444,279.11083l13.124,1.87485s5.50973,11.01945,3.80507,47.60017q-.02651.56887-.05536,1.146c-1.87485,37.49705,5.62456,50.621,5.62456,50.621l31.87249,93.74262-20.62338,11.24911-29.99764-58.12042L560.77077,307.23362Z"
+                                transform="translate(-111 -43.18285)" fill="#d0cde1" />
+                            <path
+                                d="M598.599,184.84745a19.23656,19.23656,0,0,0-.88559-6.88926c-1.73906-4.75065-6.31809-7.76981-10.66511-10.35753-6.09987-3.63115-12.42182-7.12651-19.35307-8.66s-14.64427-.87976-20.41548,3.25386c-3.71336,2.65968-6.35745,6.527-8.81894,10.37462a57.92718,57.92718,0,0,0-6.75676,13.169,1.82048,1.82048,0,0,0-.10427,1.14069,2.03573,2.03573,0,0,0,.80166.86129c4.63363,3.46014,8.1138,4.98446,4.93371,9.81459,7.67035-7.91157,13.12588-10.13051,20.79622-18.04208-.89907.83134.44687,2.32383,1.67019,2.26968s2.36642-.80725,3.58629-.70068c1.77719.15526,2.84334,1.96413,4.16528,3.162s4.08766,1.34925,4.31171-.42058l4.66658,6.305a5.35223,5.35223,0,0,0,2.35426-1.722l5.02846,7.60306,2.11726-2.269a39.80818,39.80818,0,0,1,2.53115,4.46927c3.93507-3.26064,5.13275,4.81552,5.13605,6.72768C597.96983,204.30017,598.55252,188.31668,598.599,184.84745Z"
+                                transform="translate(-111 -43.18285)" fill="#2f2e41" />
+                            <path d="M508.2749,459.09666s33.74734,44.99645,16.87367,46.87131-29.99764-39.3719-29.99764-39.3719Z"
+                                transform="translate(-111 -43.18285)" fill="#fbbebe" />
+                            <path
+                                d="M468.903,260.36231l-7.49941-1.87486s-20.62338,28.12279-24.37308,58.12043-7.49941,67.49468-7.49941,67.49468l63.745,89.99292,22.49823-16.87368-48.74616-84.36835,16.87367-24.37308Z"
+                                transform="translate(-111 -43.18285)" fill="#d0cde1" />
+                            <polygon points="364.303 343.992 403.837 413.102 368.215 338.107 364.303 343.992" opacity="0.1" />
+                            <polygon points="978 747 976 747 976 26 231 26 231 24 978 24 978 747" fill="#3f3d56" />
+                            <rect x="520" y="4" width="213" height="43" fill="#3f3d56" />
+                            <rect x="266" y="4" width="82" height="43" fill="#3f3d56" />
+                            <circle cx="189" cy="218" r="25" fill="#f2f2f2" />
+                            <circle cx="189" cy="385" r="47" fill="#f2f2f2" />
+                            <circle cx="189" cy="565" r="63" fill="#f2f2f2" />
+                            <circle cx="214" cy="593" r="10" fill="#d0cde1" />
+                            <circle cx="174" cy="571" r="6" fill="#d0cde1" />
+                            <circle cx="189" cy="539" r="6" fill="#d0cde1" />
+                            <path
+                                d="M424.48328,505.779a12,12,0,1,1,12-12A12.01375,12.01375,0,0,1,424.48328,505.779Zm0-22a10,10,0,1,0,10,10A10.01114,10.01114,0,0,0,424.48328,483.779Z"
+                                transform="translate(-111 -43.18285)" fill="#2f2e41" />
+                            <path
+                                d="M381.31092,195.06889H361.56977V175.32774h19.74115Zm-18.2226-1.51855h16.704v-16.704h-16.704Z"
+                                transform="translate(-111 -43.18285)" fill="#3f3d56" />
+                            <path
+                                d="M182.95479,340.149l-13.4651-14.43621,14.43621-13.46509,13.4651,14.43621ZM171.636,325.78746l11.39354,12.21526,12.21525-11.39354L183.8512,314.39392Z"
+                                transform="translate(-111 -43.18285)" fill="#2f2e41" />
+                            <circle cx="433" cy="25" r="25" fill="#6c63ff" />
+                            <rect y="77" width="433" height="2" fill="#3f3d56" />
+                            <circle cx="77" cy="78" r="25" fill="#6c63ff" />
+                            <rect x="520.68628" y="356.81715" width="245" height="171" fill="#6c63ff" />
+                            <path d="M900.68628,536h-247V363h247Zm-245-2h243V365h-243Z" transform="translate(-111 -43.18285)"
+                                fill="#3f3d56" />
+                        </svg>
                     </div>
-
-                    <div class="text-center text-sm text-gray-500 dark:text-gray-400 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
+                    <div class="flex flex-col items-center w-full sm:w-1/2 pr-8 py-8 mt-6">
+                        <h3 class="text-3xl text-gray-800 group-hover:text-white font-bold leading-none mb-3">
+                            Peminjaman Alat
+                        </h3>
+                        <p class="text-justify leading-relaxed tracking-wide max-w-xl text-gray-600 text-right mb-8 group-hover:text-white">
+                            Laboratorium Terpadu menyediakan berbagai inventaris yang dapat disewakan, seperti Proyektor, LCD, dan peralatan lainnya, untuk mendukung kebutuhan akademik maupun kegiatan lainnya.
+                        </p>
+                        <a href="peminjamanalat"
+                            class="mb-8 mt-auto px-6 py-3 text-lg font-semibold text-white bg-gradient-to-r from-indigo-600 to-blue-500 
+                            rounded-full shadow-lg hover:from-blue-500 hover:to-indigo-600 hover:text-white 
+                            transform hover:scale-110 transition duration-300 ease-in-out">
+                            Selengkapnya
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
-    </body>
+    </section>
+
+    <script>
+        AOS.init({
+            duration: 1000, // Durasi animasi
+            once: false, // Animasi hanya berjalan sekali
+        });
+        document.addEventListener("DOMContentLoaded", function() {
+            console.log("JavaScript Loaded!");
+
+            const tombol = document.querySelector("#ayomulai");
+            const target = document.querySelector("#layanan");
+
+            if (tombol && target) {
+                tombol.addEventListener("click", function(e) {
+                    e.preventDefault(); // Cegah scroll default
+
+                    const offset = 100; // Sesuaikan dengan tinggi navbar
+                    const targetPosition = target.offsetTop - offset;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: "smooth"
+                    });
+                });
+            }
+            var typed = new Typed("#typed-text", {
+                strings: ["Laboratorium Terpadu"], // Teks yang akan diketik
+                typeSpeed: 100, // Kecepatan mengetik
+                backSpeed: 50, // Kecepatan menghapus
+                startDelay: 800, // Jeda sebelum mulai mengetik
+                backDelay: 1500, // Jeda sebelum mulai menghapus
+                showCursor: true, // Tampilkan kursor berkedip
+                loop: true, // Ulang animasi terus-menerus
+                cursorChar: '|',
+                smartBackspace: false // Paksa mengetik ulang dari awal
+            });
+        });
+    </script>
+
+</body>
+
 </html>

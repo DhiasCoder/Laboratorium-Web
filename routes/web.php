@@ -13,13 +13,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// ==== Contact Mail ====
+
+Route::get('/peminjamanlab', function () {
+    return view('peminjamanlab.index');
+})->name('peminjamanlab');
+
+Route::get('/peminjamanalat', function () {
+    return view('peminjamanalat.index');
+})->name('peminjamanalat');
+
 Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', function () {
+    return view('welcome');
+})->name('home');
+
 Route::get('/dashboard', function () {
     return view('dashboard.index');
-});
+})->name('dashboard');
 
 Route::get('/forms', function () {
     return view('pages.forms.index');
@@ -51,7 +65,7 @@ Route::get('/icons', function () {
 
 Route::get('/login', function () {
     return view('pages.user-pages.login.index');
-});
+})->name('login');
 
 Route::get('/register', function () {
     return view('pages.user-pages.register.index');
