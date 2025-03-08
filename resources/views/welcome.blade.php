@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laboratorium Raden Fatah</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 
 <body class="bg-gradient-to-r from-blue-600 to-sky-300 text-white overflow-x-hidden">
     <!-- Navbar -->
-    <nav id="navbar" class="fixed top-0 left-0 w-full bg-white shadow-md z-50 
-    transition-all duration-300 ease-out flex items-center justify-between px-6 py-3"
+    <nav id="navbar" class="fixed top-0 left-0 w-full bg-white shadow-md z-50 transition-all duration-300 ease-out flex items-center justify-between px-6 py-3"
         data-aos="fade-down" data-aos-delay="300">
 
         <!-- Logo -->
@@ -25,36 +25,108 @@
             </a>
         </div>
 
+        <!-- Menu -->
+        <div class="flex items-center gap-x-6">
+            <!-- Dropdown Home -->
+            <div class="relative group">
+                <button class="text-gray-800 font-semibold flex items-center gap-x-1 hover:text-gray-600">
+                    Home <span class="material-icons">arrow_drop_down</span>
+                </button>
+                <div class="absolute hidden bg-white shadow-md rounded-md border border-indigo-300 group-hover:block w-52">
+                    <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Submenu 1</a>
+                    <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Submenu 2</a>
+                </div>
+            </div>
+
+            <!-- Dropdown Tentang -->
+            <div class="relative group">
+                <button class="text-gray-800 font-semibold flex items-center gap-x-1 hover:text-gray-600">
+                    Tentang Kami <span class="material-icons">arrow_drop_down</span>
+                </button>
+                <div class="absolute hidden bg-white shadow-md rounded-md border border-indigo-300 group-hover:block w-52">
+                    <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Layanan 1</a>
+                    <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Layanan 2</a>
+                </div>
+            </div>
+
+            <!-- Dropdown Fasilitas -->
+            <div class="relative group">
+                <button class="text-gray-800 font-semibold flex items-center gap-x-1 hover:text-gray-600">
+                    Fasilitas <span class="material-icons">arrow_drop_down</span>
+                </button>
+                <div class="absolute hidden bg-white shadow-md rounded-md border border-indigo-300 group-hover:block w-52">
+                    <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Layanan 1</a>
+                    <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Layanan 2</a>
+                </div>
+            </div>
+
+            <!-- Dropdown Layanan -->
+            <div class="relative group">
+                <button class="text-gray-800 font-semibold flex items-center gap-x-1 hover:text-gray-600">
+                    Layanan <span class="material-icons">arrow_drop_down</span>
+                </button>
+                <div class="absolute hidden bg-white shadow-md rounded-md border border-indigo-300 group-hover:block w-52">
+                    <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Layanan 1</a>
+                    <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Layanan 2</a>
+                </div>
+            </div>
+
+            <!-- Dropdown Jadwal -->
+            <div class="relative group">
+                <button class="text-gray-800 font-semibold flex items-center gap-x-1 hover:text-gray-600">Jadwal</button>
+                <div class="absolute hidden bg-white shadow-md rounded-md border border-indigo-300 group-hover:block w-52">
+                    <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Layanan 1</a>
+                    <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Layanan 2</a>
+                </div>
+            </div>
+
+            <!-- Dropdown Contact -->
+            <div class="relative group">
+                <button class="text-gray-800 font-semibold flex items-center gap-x-1 hover:text-gray-600">Contact</button>
+                <div class="absolute hidden bg-white shadow-md rounded-md border border-indigo-300 group-hover:block w-52">
+                    <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Email</a>
+                    <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Phone</a>
+                </div>
+            </div>
+        </div>
+
         <!-- Tombol Login -->
         <div>
             <a href="{{ route('login') }}" class="bg-gray-800 text-white px-4 py-2 rounded-full shadow 
-            transition-all duration-300 ease-out
-            hover:bg-gray-700 hover:text-white hover:shadow-xl hover:-translate-y-1 hover:scale-105">
+        transition-all duration-300 ease-out
+        hover:bg-gray-700 hover:text-white hover:shadow-xl hover:-translate-y-1 hover:scale-105">
                 Masuk
             </a>
         </div>
     </nav>
 
-    <div class="min-h-screen flex items-center justify-center bg-gradient-to-b from-blue-100 to-white px-4 pt-24">
-        <div class="container mx-auto flex flex-wrap flex-col md:flex-row items-center" data-aos="fade-up" data-aos-delay="100">
+    <div class="min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat px-4 pt-24"
+        style="background-image: url('https://labterpadu.radenfatah.ac.id/wp-content/uploads/2023/01/cropped-IMG_5649-scaled-1-1536x962.jpg');">
+
+        <div class="container mx-auto flex flex-wrap flex-col md:flex-row items-center 
+        bg-white bg-opacity-70 p-16 md:p-20 rounded-lg shadow-lg w-11/12 md:w-4/5"
+            data-aos="fade-up" data-aos-delay="100">
+
             <div class="flex flex-col w-full md:w-2/5 text-center md:text-left">
                 <div id="typed-text-container" class="text-center md:text-left">
-                    <h1 class="text-5xl font-bold text-gray-800">
+                    <h2 class="text-3xl font-bold text-gray-800">
                         <span id="typed-text"></span>
-                    </h1>
-                    <h2 class="text-3xl text-blue-600 mt-2">Fakultas Sains dan Teknologi</h2>
+                    </h2>
+                    <h1 class="text-2xl text-blue-600 mt-2">Universitas Islam Negeri <br>Raden Fatah</h1>
                     <p class="text-lg text-gray-700 mt-3">Inovasi, Eksperimen, dan Riset Mahasiswa</p>
                 </div>
-                <a href="#layanan" class="text-center mt-6 py-4 px-8 bg-blue-500 text-white font-bold rounded-full shadow-lg 
-                hover:bg-blue-600 transition transform hover:scale-105">Ayo Mulai</a>
+                <button id="scroll-button" class="text-center mt-6 py-4 px-8 bg-blue-500 text-white font-bold rounded-full shadow-lg 
+                hover:bg-blue-600 transition transform hover:scale-105">Ayo Mulai</button>
             </div>
-            <div class="w-full md:w-3/5 relative">
-                <img class="w-full md:w-4/5 z-50" src="{{ asset('assets/images/hero.png') }}" alt="hero illustration" />
+
+            <div class="w-3/5 md:w-3/5 relative">
                 <div class="absolute top-0 left-10 w-16 h-16 bg-blue-300 rounded-full opacity-50 animate-bounce"></div>
                 <div class="absolute bottom-10 right-20 w-24 h-24 bg-blue-400 rounded-full opacity-30 animate-pulse"></div>
             </div>
         </div>
     </div>
+
+
 
     <div class="relative -mt-12 lg:-mt-24">
         <svg viewBox="0 0 1428 174" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -80,7 +152,7 @@
     </div>
 
     <!-- Section Layanan -->
-    <section id="layanan" class="bg-white border-b py-8">
+    <section id="next-section" class="bg-white border-b py-8">
         <div data-aos="fade-right" data-aos-delay="200" class="bg-white p-8 shadow-lg rounded-lg">
             <div class="container max-w-5xl mx-auto m-8">
                 <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800" id="layanan">
@@ -292,8 +364,12 @@
                         </svg>
                     </div>
                 </div>
+            </div>
+        </div>
 
-                <!-- Peminjaman Alat -->
+        <!-- Peminjaman Alat -->
+        <div data-aos="fade-left" data-aos-delay="300" class="bg-white p-8 shadow-lg rounded-lg">
+            <div class="container max-w-5xl mx-auto m-8">
                 <div
                     class="flex flex-wrap rounded shadow mb-4 
                     hover:shadow-xl hover:bg-gradient-to-r from-sky-600 to-blue-300 text-white 
@@ -383,26 +459,18 @@
             once: false, // Animasi hanya berjalan sekali
         });
         document.addEventListener("DOMContentLoaded", function() {
-            console.log("JavaScript Loaded!");
+            document.getElementById("scroll-button").addEventListener("click", function() {
+                let targetSection = document.getElementById("next-section");
+                let offset = 50; // Ubah nilai ini untuk mengatur jarak dari atas (misal: navbar tinggi 50px)
+                let targetPosition = targetSection.offsetTop - offset;
 
-            const tombol = document.querySelector("#ayomulai");
-            const target = document.querySelector("#layanan");
-
-            if (tombol && target) {
-                tombol.addEventListener("click", function(e) {
-                    e.preventDefault(); // Cegah scroll default
-
-                    const offset = 100; // Sesuaikan dengan tinggi navbar
-                    const targetPosition = target.offsetTop - offset;
-
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: "smooth"
-                    });
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: "smooth"
                 });
-            }
+            });
             var typed = new Typed("#typed-text", {
-                strings: ["Laboratorium Terpadu"], // Teks yang akan diketik
+                strings: ["LABORATORIUM TERPADU"], // Teks yang akan diketik
                 typeSpeed: 100, // Kecepatan mengetik
                 backSpeed: 50, // Kecepatan menghapus
                 startDelay: 800, // Jeda sebelum mulai mengetik
