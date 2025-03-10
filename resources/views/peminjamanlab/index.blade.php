@@ -204,12 +204,10 @@
         </div>
 
         <!-- Tombol Panah ke Bawah -->
-        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10">
-            <button id="scroll-button" class="animate-bounce p-4 bg-white bg-opacity-80 rounded-full shadow-lg transition hover:bg-opacity-100 hover:scale-110">
-                <svg class="w-8 h-8 text-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M19 9l-7 7-7-7" />
+        <div class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-10">
+            <button id="scroll-button" class="animate-bounce bg-white bg-opacity-80 rounded-full shadow-lg transition hover:bg-opacity-100 hover:scale-110 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
+                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
             </button>
         </div>
@@ -236,67 +234,70 @@
         </div>
     </div>
 
-    <div id="next-section" class="bg-white min-h-full py-16">
-        <div class="container mx-auto py-12 px-6">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8" data-aos="fade-down">Prosedur Peminjaman Laboratorium</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Step 1 -->
+    <div id="next-section" class="bg-white min-h-screen py-16 overflow-hidden">
+        <div class="container max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8" data-aos="fade-down">
+                Prosedur Peminjaman Laboratorium
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+                <!-- Step Items -->
                 <div class="flex items-start" data-aos="fade-right" data-aos-delay="100">
-                    <div class="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-500 text-white text-lg font-bold aspect-square">1</div>
-                    <div class="ml-4">
-                        <h3 class="text-xl font-semibold text-gray-900">Cek Ketersediaan Ruang</h3>
-                        <p class="text-gray-700 mt-2">Pastikan ruang yang ingin dipinjam tidak sedang digunakan atau dalam perbaikan. Bisa dilakukan via <b>WhatsApp</b> atau langsung ke <b>Ruang Pengelola</b>.</p>
+                    <div class="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-indigo-500 text-white text-lg font-bold aspect-square">1</div>
+                    <div class="ml-4 max-w-sm">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-900">Cek Ketersediaan Ruang</h3>
+                        <p class="text-sm sm:text-base text-gray-700 mt-2">Pastikan ruang yang ingin dipinjam tidak sedang digunakan atau dalam perbaikan. Bisa dilakukan via <b>WhatsApp</b> atau langsung ke <b>Ruang Pengelola</b>.</p>
                     </div>
                 </div>
-                <!-- Step 2 -->
+
                 <div class="flex items-start" data-aos="fade-left" data-aos-delay="200">
-                    <div class="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-500 text-white text-lg font-bold aspect-square">2</div>
-                    <div class="ml-4">
-                        <h3 class="text-xl font-semibold text-gray-900">Mengisi Formulir</h3>
-                        <p class="text-gray-700 mt-2">Isi formulir peminjaman ruang dengan lengkap di halaman berikut: <a href="#" class="text-blue-600 font-bold hover:underline">Formulir Peminjaman</a>.</p>
+                    <div class="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-indigo-500 text-white text-lg font-bold aspect-square">2</div>
+                    <div class="ml-4 max-w-sm">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-900">Mengisi Formulir</h3>
+                        <p class="text-sm sm:text-base text-gray-700 mt-2">Isi formulir peminjaman ruang dengan lengkap di halaman berikut: <a href="#" class="text-blue-600 font-bold hover:underline">Formulir Peminjaman</a>.</p>
                     </div>
                 </div>
-                <!-- Step 3 -->
+
                 <div class="flex items-start" data-aos="fade-right" data-aos-delay="300">
-                    <div class="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-500 text-white text-lg font-bold aspect-square">3</div>
-                    <div class="ml-4">
-                        <h3 class="text-xl font-semibold text-gray-900">Konfirmasi Peminjaman</h3>
-                        <p class="text-gray-700 mt-2">Konfirmasi via <b>WhatsApp</b> setelah mengisi formulir. Jika ada kendala, hubungi kami melalui <a href="mailto:labkom@mipa.uns.ac.id" class="text-blue-600 font-bold hover:underline">Email</a>.</p>
+                    <div class="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-indigo-500 text-white text-lg font-bold aspect-square">3</div>
+                    <div class="ml-4 max-w-sm">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-900">Konfirmasi Peminjaman</h3>
+                        <p class="text-sm sm:text-base text-gray-700 mt-2">Konfirmasi via <b>WhatsApp</b> setelah mengisi formulir. Jika ada kendala, hubungi kami melalui <a href="mailto:labkom@mipa.uns.ac.id" class="text-blue-600 font-bold hover:underline">Email</a>.</p>
                     </div>
                 </div>
-                <!-- Step 4 -->
+
                 <div class="flex items-start" data-aos="fade-left" data-aos-delay="400">
-                    <div class="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-500 text-white text-lg font-bold aspect-square">4</div>
-                    <div class="ml-4">
-                        <h3 class="text-xl font-semibold text-gray-900">Menunggu Perizinan</h3>
-                        <p class="text-gray-700 mt-2">Dokumen peminjaman akan diproses dalam waktu 1x24 jam. Jika belum ada konfirmasi, silakan hubungi kami.</p>
+                    <div class="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-indigo-500 text-white text-lg font-bold aspect-square">4</div>
+                    <div class="ml-4 max-w-sm">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-900">Menunggu Perizinan</h3>
+                        <p class="text-sm sm:text-base text-gray-700 mt-2">Dokumen peminjaman akan diproses dalam waktu 1x24 jam. Jika belum ada konfirmasi, silakan hubungi kami.</p>
                     </div>
                 </div>
-                <!-- Step 5 -->
+
                 <div class="flex items-start" data-aos="fade-right" data-aos-delay="500">
-                    <div class="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-500 text-white text-lg font-bold aspect-square">5</div>
-                    <div class="ml-4">
-                        <h3 class="text-xl font-semibold text-gray-900">Cetak Dokumen</h3>
-                        <p class="text-gray-700 mt-2">Dokumen yang di dapatkan di cetak dengan kertas ukuran A4.</p>
+                    <div class="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-indigo-500 text-white text-lg font-bold aspect-square">5</div>
+                    <div class="ml-4 max-w-sm">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-900">Cetak Dokumen</h3>
+                        <p class="text-sm sm:text-base text-gray-700 mt-2">Dokumen yang didapatkan dicetak dengan kertas ukuran A4.</p>
                     </div>
                 </div>
-                <!-- Step 6 -->
+
                 <div class="flex items-start" data-aos="fade-left" data-aos-delay="600">
-                    <div class="flex items-center justify-center w-12 h-12 rounded-full bg-indigo-500 text-white text-lg font-bold aspect-square">6</div>
-                    <div class="ml-4">
-                        <h3 class="text-xl font-semibold text-gray-900">Ambil Kunci</h3>
-                        <p class="text-gray-700 mt-2">Pada saat ingin mengambil kunci di <b>Ruang Pengelola</b>, bawa dokumen yang diperlukan seperti
-                            <i>Surat Peminjaman Ruang</i> yang telah diproses dan <i>Kartu Mahasiswa.</i>
-                        </p>
+                    <div class="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-indigo-500 text-white text-lg font-bold aspect-square">6</div>
+                    <div class="ml-4 max-w-sm">
+                        <h3 class="text-lg sm:text-xl font-semibold text-gray-900">Ambil Kunci</h3>
+                        <p class="text-sm sm:text-base text-gray-700 mt-2">Pada saat ingin mengambil kunci di <b>Ruang Pengelola</b>, bawa dokumen yang diperlukan seperti <i>Surat Peminjaman Ruang</i> yang telah diproses dan <i>Kartu Mahasiswa.</i></p>
                     </div>
                 </div>
             </div>
-            <div class="flex justify-center mt-8">
+
+            <div class="flex flex-col sm:flex-row justify-center items-center mt-8 gap-4">
                 <a href="{{ route('home') }}" class="bg-gray-800 text-white px-6 py-3 rounded-lg font-bold hover:bg-orange-500 transition transform hover:scale-105">Kembali</a>
-                <a href="#" class="ml-4 bg-blue-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700 transition transform hover:scale-105">Isi Formulir</a>
+                <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700 transition transform hover:scale-105">Isi Formulir</a>
             </div>
         </div>
     </div>
+
     <script>
         AOS.init({
             duration: 1000,
@@ -369,37 +370,75 @@
                 });
             });
         });
-        document.getElementById("scroll-button").addEventListener("click", function() {
-            let targetSection = document.getElementById("next-section");
-            let offset = 50; // Atur jarak dari atas
-            let targetPosition = targetSection.offsetTop - offset;
+        document.addEventListener("DOMContentLoaded", function() {
             let scrollButton = document.getElementById("scroll-button");
+            let buttonContainer = scrollButton.parentElement;
+            let targetSection = document.getElementById("next-section");
 
-            // Cek posisi scroll, jika masih di atas maka scroll ke bawah, jika sudah ke bawah maka kembali ke atas
-            if (window.scrollY < targetPosition - 50) {
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: "smooth"
-                });
-
-                // Ubah icon menjadi panah atas
-                scrollButton.innerHTML = `
-                <svg class="w-8 h-8 text-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
-                </svg>`;
-            } else {
-                // Jika sudah di bawah, klik lagi untuk scroll ke atas
-                window.scrollTo({
-                    top: 0,
-                    behavior: "smooth"
-                });
-
-                // Ubah kembali ke panah bawah
-                scrollButton.innerHTML = `
-                <svg class="w-8 h-8 text-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>`;
+            function updateButtonState() {
+                if (window.scrollY === 0) {
+                    // Jika sudah di paling atas, ubah ke panah ke bawah
+                    scrollButton.innerHTML = `
+            <svg class="w-8 h-8 text-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>`;
+                    scrollButton.dataset.direction = "down"; // Set status tombol
+                } else {
+                    // Jika sedang di bawah, ubah ke panah ke atas
+                    scrollButton.innerHTML = `
+            <svg class="w-8 h-8 text-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+            </svg>`;
+                    scrollButton.dataset.direction = "up"; // Set status tombol
+                }
             }
+
+            // Event listener untuk mendeteksi scroll
+            window.addEventListener("scroll", updateButtonState);
+
+            // Event listener untuk tombol scroll
+            scrollButton.addEventListener("click", function() {
+                if (scrollButton.dataset.direction === "down") {
+                    // Scroll ke bawah ke next-section
+                    let offset = 50;
+                    let targetPosition = targetSection.offsetTop - offset;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: "smooth"
+                    });
+
+                    // Pindahkan tombol ke kanan bawah
+                    setTimeout(() => {
+                        buttonContainer.style.position = "fixed";
+                        buttonContainer.style.right = "1.5rem";
+                        buttonContainer.style.bottom = "1.5rem";
+                        buttonContainer.style.left = "unset";
+                        buttonContainer.style.zIndex = "100";
+                    }, 500);
+
+                    scrollButton.dataset.direction = "up"; // Ubah status ke atas
+                } else {
+                    // Scroll ke atas jika tombol diklik saat sudah di bawah
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+
+                    // Tetap di kanan bawah
+                    setTimeout(() => {
+                        buttonContainer.style.position = "fixed";
+                        buttonContainer.style.right = "1.5rem";
+                        buttonContainer.style.bottom = "1.5rem";
+                        buttonContainer.style.left = "unset";
+                    }, 500);
+
+                    scrollButton.dataset.direction = "down"; // Ubah status ke bawah
+                }
+            });
+
+            // Inisialisasi awal saat halaman dimuat
+            updateButtonState();
         });
     </script>
 </body>

@@ -105,6 +105,15 @@
         </div>
     </nav>
 
+    <!-- Tombol Panah ke Bawah -->
+    <div class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-10">
+        <button id="scroll-buttons" class="animate-bounce bg-white bg-opacity-80 rounded-full shadow-lg transition hover:bg-opacity-100 hover:scale-110 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+        </button>
+    </div>
+
     <!-- Mobile Menu (Terpisah dari navbar untuk menghindari masalah dengan fixed position) -->
     <div id="mobile-menu" class="fixed inset-0 bg-white z-50 hidden flex-col pt-16 pb-6 px-4 w-full h-full overflow-y-auto md:hidden">
         <button id="close-menu-button" class="absolute top-4 right-4 text-gray-800">
@@ -189,28 +198,38 @@
         </div>
     </div>
 
-    <div class="min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat px-4 pt-24"
+    <div class="min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat px-4 pt-24 overflow-hidden"
         style="background-image: url('https://labterpadu.radenfatah.ac.id/wp-content/uploads/2023/01/cropped-IMG_5649-scaled-1-1536x962.jpg');">
 
         <div class="container mx-auto flex flex-wrap flex-col md:flex-row items-center 
-        bg-white bg-opacity-70 p-16 md:p-20 rounded-lg shadow-lg w-11/12 md:w-4/5"
+        bg-white bg-opacity-70 p-8 sm:p-16 md:p-20 rounded-lg shadow-lg w-11/12 md:w-4/5 max-w-screen-lg"
             data-aos="fade-up" data-aos-delay="100">
 
-            <div class="flex flex-col w-full md:w-2/5 text-center md:text-left">
-                <div id="typed-text-container" class="text-center md:text-left">
-                    <h2 class="text-3xl font-bold text-gray-800">
+            <div class="flex flex-col w-full md:w-2/5 text-center md:text-left gap-4 md:gap-6">
+                <div id="typed-text-container">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-gray-800">
                         <span id="typed-text"></span>
                     </h2>
-                    <h1 class="text-2xl text-blue-600 mt-2">Universitas Islam Negeri <br>Raden Fatah</h1>
-                    <p class="text-lg text-gray-700 mt-3">Inovasi, Eksperimen, dan Riset Mahasiswa</p>
+                    <h1 class="text-xl sm:text-2xl text-blue-600 mt-2">
+                        Universitas Islam Negeri <br class="hidden sm:block"> Raden Fatah
+                    </h1>
+                    <p class="text-base sm:text-lg text-gray-700 mt-3">
+                        Eksplorasi Ilmu, Menciptakan Solusi Nyata
+                    </p>
                 </div>
-                <button id="scroll-button" class="text-center mt-6 py-4 px-8 bg-blue-500 text-white font-bold rounded-full shadow-lg 
-                hover:bg-blue-600 transition transform hover:scale-105">Ayo Mulai</button>
+                <button id="scroll-button"
+                    class="mt-4 sm:mt-6 py-3 sm:py-4 px-6 sm:px-8 bg-blue-500 text-white font-bold rounded-full shadow-lg 
+                hover:bg-blue-600 transition transform hover:scale-105">
+                    Ayo Mulai
+                </button>
             </div>
 
-            <div class="w-3/5 md:w-3/5 relative">
-                <div class="absolute top-0 left-10 w-16 h-16 bg-blue-300 rounded-full opacity-50 animate-bounce"></div>
-                <div class="absolute bottom-10 right-20 w-24 h-24 bg-blue-400 rounded-full opacity-30 animate-pulse"></div>
+            <div class="w-4/5 sm:w-3/5 flex justify-center relative mt-6 md:mt-0 max-w-xs sm:max-w-md min-h-[150px] sm:min-h-[200px]">
+                <!-- Lingkaran Atas -->
+                <div class="absolute top-2 sm:top-0 left-4 sm:left-10 w-10 sm:w-16 h-10 sm:h-16 bg-blue-300 rounded-full opacity-50 animate-bounce"></div>
+
+                <!-- Lingkaran Bawah -->
+                <div class="absolute bottom-4 sm:bottom-10 right-6 sm:right-20 w-16 sm:w-24 h-16 sm:h-24 bg-blue-400 rounded-full opacity-30 animate-pulse"></div>
             </div>
         </div>
     </div>
@@ -239,7 +258,7 @@
     </div>
 
     <!-- Section Layanan -->
-    <section id="next-section" class="bg-white border-b py-8">
+    <section id="next-section" class="bg-white min-h-screen border-b py-8 overflow-hidden">
         <div data-aos="fade-right" data-aos-delay="100" class="bg-white p-8 shadow-lg rounded-lg">
             <div class="container max-w-5xl mx-auto m-8">
                 <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800" id="layanan">
@@ -255,12 +274,13 @@
                     hover:shadow-xl hover:bg-gradient-to-r from-blue-300 to-sky-600 text-white 
                     hover:-translate-y-1 hover:scale-105 hover:-rotate-1
                     group transform transition ease-out duration-300">
-                    <div class="flex flex-col items-center w-5/6 sm:w-1/2 pl-8 py-8">
-                        <h3 class="text-3xl text-gray-800 group-hover:text-white font-bold leading-none mb-3">
+                    <div class="flex flex-col items-center w-5/6 sm:w-1/2 px-4 sm:px-0 py-8">
+                        <h3 class="text-2xl sm:text-3xl text-gray-800 group-hover:text-white font-bold leading-none mb-3 text-center sm:text-left">
                             Peminjaman Ruang
                         </h3>
-                        <p class="text-justify leading-relaxed tracking-wide max-w-xl text-gray-600 group-hover:text-white">
-                            Jika Anda ingin menggunakan Laboratorium Komputer di luar jam perkuliahan, silakan ajukan permohonan terlebih dahulu untuk memastikan ketersediaan fasilitas dan mendapatkan akses sesuai kebutuhan Anda.
+                        <p class="text-sm sm:text-base md:text-lg text-left sm:text-justify leading-normal sm:leading-relaxed max-w-2xl text-gray-600 group-hover:text-white">
+                            Jika Anda ingin menggunakan Laboratorium Komputer di luar jam perkuliahan, silakan ajukan permohonan terlebih dahulu
+                            untuk memastikan ketersediaan fasilitas dan mendapatkan akses sesuai kebutuhan Anda.
                         </p>
                         <a href="{{ route('peminjamanlab') }}"
                             class="mb-8 mt-auto px-6 py-3 text-lg font-semibold text-white bg-gradient-to-r from-indigo-600 to-blue-500 
@@ -453,10 +473,9 @@
                 </div>
             </div>
         </div>
-
-        <!-- Peminjaman Alat -->
-        <div data-aos="fade-left" data-aos-delay="100" class="bg-white p-8 shadow-lg rounded-lg">
+        <div data-aos="fade-left" data-aos-delay="200" class="bg-white p-8 shadow-lg rounded-lg">
             <div class="container max-w-5xl mx-auto m-8">
+                <!-- Peminjaman Alat -->
                 <div
                     class="flex flex-wrap rounded shadow mb-4 
                     hover:shadow-xl hover:bg-gradient-to-r from-sky-600 to-blue-300 text-white 
@@ -525,7 +544,7 @@
                         <h3 class="text-3xl text-gray-800 group-hover:text-white font-bold leading-none mb-3">
                             Peminjaman Alat
                         </h3>
-                        <p class="text-justify leading-relaxed tracking-wide max-w-xl text-gray-600 text-right mb-8 group-hover:text-white">
+                        <p class="text-sm sm:text-base md:text-lg text-left sm:text-justify leading-normal sm:leading-relaxed max-w-2xl text-gray-600 group-hover:text-white">
                             Laboratorium Terpadu menyediakan berbagai inventaris yang dapat disewakan, seperti Proyektor, LCD, dan peralatan lainnya, untuk mendukung kebutuhan akademik maupun kegiatan lainnya.
                         </p>
                         <a href="peminjamanalat"
@@ -540,9 +559,80 @@
         </div>
     </section>
 
+
     <script>
         AOS.init({
             once: false, // Animasi hanya berjalan sekali
+        });
+        document.addEventListener("DOMContentLoaded", function() {
+            let scrollButton = document.getElementById("scroll-buttons");
+            let buttonContainer = scrollButton.parentElement;
+            let targetSection = document.getElementById("next-section");
+
+            function updateButtonState() {
+                if (window.scrollY === 0) {
+                    // Jika sudah di paling atas, ubah ke panah ke bawah
+                    scrollButton.innerHTML = `
+            <svg class="w-8 h-8 text-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>`;
+                    scrollButton.dataset.direction = "down"; // Set status tombol
+                } else {
+                    // Jika sedang di bawah, ubah ke panah ke atas
+                    scrollButton.innerHTML = `
+            <svg class="w-8 h-8 text-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+            </svg>`;
+                    scrollButton.dataset.direction = "up"; // Set status tombol
+                }
+            }
+
+            // Event listener untuk mendeteksi scroll
+            window.addEventListener("scroll", updateButtonState);
+
+            // Event listener untuk tombol scroll
+            scrollButton.addEventListener("click", function() {
+                if (scrollButton.dataset.direction === "down") {
+                    // Scroll ke bawah ke next-section
+                    let offset = 50;
+                    let targetPosition = targetSection.offsetTop - offset;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: "smooth"
+                    });
+
+                    // Pindahkan tombol ke kanan bawah
+                    setTimeout(() => {
+                        buttonContainer.style.position = "fixed";
+                        buttonContainer.style.right = "1.5rem";
+                        buttonContainer.style.bottom = "1.5rem";
+                        buttonContainer.style.left = "unset";
+                        buttonContainer.style.zIndex = "100";
+                    }, 500);
+
+                    scrollButton.dataset.direction = "up"; // Ubah status ke atas
+                } else {
+                    // Scroll ke atas jika tombol diklik saat sudah di bawah
+                    window.scrollTo({
+                        top: 0,
+                        behavior: "smooth"
+                    });
+
+                    // Tetap di kanan bawah
+                    setTimeout(() => {
+                        buttonContainer.style.position = "fixed";
+                        buttonContainer.style.right = "1.5rem";
+                        buttonContainer.style.bottom = "1.5rem";
+                        buttonContainer.style.left = "unset";
+                    }, 500);
+
+                    scrollButton.dataset.direction = "down"; // Ubah status ke bawah
+                }
+            });
+
+            // Inisialisasi awal saat halaman dimuat
+            updateButtonState();
         });
         document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("scroll-button").addEventListener("click", function() {

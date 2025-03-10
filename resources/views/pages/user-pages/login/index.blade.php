@@ -60,7 +60,6 @@
     <!-- Left: Form Login (Full width on mobile, half on desktop) -->
     <div class="w-full md:w-1/2 p-6 sm:p-8 md:p-10 bg-white order-2 md:order-1">
       <div class="flex flex-col sm:flex-row items-center mb-8">
-        <img src="https://cdn.discordapp.com/attachments/945456645255880754/1348219467490005075/logouin.png?ex=67ceaab9&is=67cd5939&hm=26e51e01a1e4b63703e65b70d704ec0d01efa53528be554069019d849ee73311&" alt="Logo" class="w-12 h-12 mb-3 sm:mb-0 sm:mr-3">
         <h2 class="text-2xl sm:text-3xl font-bold text-blue-700 text-center sm:text-left">Laboratorium Terpadu</h2>
       </div>
 
@@ -172,6 +171,21 @@
       </div>
     </div>
   </div>
+  <script>
+    // Auto scroll to login form on page load
+    window.addEventListener('load', function() {
+      // Menunggu sedikit waktu untuk memastikan halaman sudah dimuat sepenuhnya
+      setTimeout(function() {
+        // Mencari elemen form login
+        const loginForm = document.querySelector('form');
+        // Scroll ke posisi form dengan animasi smooth
+        loginForm.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }, 500);
+    });
+  </script>
 </body>
 
 </html>
