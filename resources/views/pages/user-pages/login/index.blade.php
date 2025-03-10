@@ -144,7 +144,7 @@
     <div class="w-full md:w-1/2 bg-gradient text-white p-6 sm:p-8 md:p-12 order-1 md:order-2">
       <div class="h-full flex flex-col items-center justify-center">
         <div class="flex justify-center mb-6">
-          <img src="https://cdn.discordapp.com/attachments/945456645255880754/1348220075525537864/hero.png?ex=67ceab4a&is=67cd59ca&hm=5a1ffa080a4d2956479245e1f3ea4d5ca730c90f45a6c35e71c94f67df9e2972&" alt="Login Illustration" class="w-2/3 max-w-sm mx-auto animate-float">
+          <img src="https://cdn.discordapp.com/attachments/945456645255880754/1348220075525537864/hero.png?ex=67cffcca&is=67ceab4a&hm=528783a3cedbf5a2ad2223c1b07d0dc09aa80cea6b6e8f8ebef6f370caaeba45&" alt="Login Illustration" class="w-2/3 max-w-sm mx-auto animate-float">
         </div>
         <div class="text-center mt-4">
           <h3 class="text-xl sm:text-2xl font-bold text-white mb-4">Laboratorium Terpadu untuk Masa Depan</h3>
