@@ -168,6 +168,16 @@
 
     <div class="container mx-auto px-4 py-8 mt-10">
         <div class="max-w-4xl mx-auto">
+            <div class="mb-6">
+                <div class="flex items-center space-x-2 text-gray-500 text-sm">
+                    <a href="#" class="hover:text-blue-600">Beranda</a>
+                    <i class="fas fa-chevron-right text-xs"></i>
+                    <a href="#" class="hover:text-blue-600">Peminjaman</a>
+                    <i class="fas fa-chevron-right text-xs"></i>
+                    <span class="text-blue-600 font-medium">Peminjaman Alat</span>
+                </div>
+            </div>
+
             <div class="bg-white rounded-lg shadow-lg overflow-hidden">
                 <div class="bg-gradient-to-r from-blue-600 to-indigo-700 px-6 py-4">
                     <h2 class="text-xl font-bold text-white">Form Peminjaman Laboratorium</h2>
@@ -444,7 +454,7 @@
                 <h3 class="text-lg font-semibold">Jam Operasional</h3>
                 <p class="text-gray-400">Senin - Kamis: 07.30 - 04.00</p>
                 <p class="text-gray-400">Jumat: 07.30 - 04.30</p>
-                <p class="text-gray-400">Minggu & Hari Libur: Tutup</p>
+                <p class="text-gray-400">Sabtu-Minggu & Hari Libur: Tutup</p>
             </div>
         </div>
         <div class="text-center text-gray-500 mt-6">

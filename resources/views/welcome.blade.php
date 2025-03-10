@@ -544,7 +544,7 @@
                 <h3 class="text-lg font-semibold">Jam Operasional</h3>
                 <p class="text-gray-400">Senin - Kamis: 07.30 - 04.00</p>
                 <p class="text-gray-400">Jumat: 07.30 - 04.30</p>
-                <p class="text-gray-400">Minggu & Hari Libur: Tutup</p>
+                <p class="text-gray-400">Sabtu-Minggu & Hari Libur: Tutup</p>
             </div>
         </div>
         <div class="text-center text-gray-500 mt-6">

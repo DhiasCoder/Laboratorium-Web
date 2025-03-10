@@ -92,7 +92,7 @@
 
     <!-- Tombol Panah ke Bawah -->
     <div class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-10">
-        <button id="scroll-buttons" class="animate-bounce bg-white bg-opacity-80 rounded-full shadow-lg transition hover:bg-opacity-100 hover:scale-110 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
+        <button id="scroll-button" class="animate-bounce bg-white bg-opacity-80 rounded-full shadow-lg transition hover:bg-opacity-100 hover:scale-110 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
             <svg class="w-5 h-5 sm:w-6 sm:h-6 text-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
@@ -178,15 +178,6 @@
                     </p>
                 </div>
             </div>
-        </div>
-
-        <!-- Tombol Panah ke Bawah -->
-        <div class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-10">
-            <button id="scroll-button" class="animate-bounce bg-white bg-opacity-80 rounded-full shadow-lg transition hover:bg-opacity-100 hover:scale-110 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
-                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-            </button>
         </div>
 
         <div class="relative h-96 md:h-[500px] bg-cover bg-center bg-no-repeat flex items-center justify-center text-white"
@@ -278,7 +269,7 @@
                 <h3 class="text-lg font-semibold">Jam Operasional</h3>
                 <p class="text-gray-400">Senin - Kamis: 07.30 - 04.00</p>
                 <p class="text-gray-400">Jumat: 07.30 - 04.30</p>
-                <p class="text-gray-400">Minggu & Hari Libur: Tutup</p>
+                <p class="text-gray-400">Sabtu-Minggu & Hari Libur: Tutup</p>
             </div>
         </div>
         <div class="text-center text-gray-500 mt-6">

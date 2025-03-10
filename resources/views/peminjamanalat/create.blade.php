@@ -335,143 +335,211 @@
                                 </div>
                             </div>
 
-                            <div class="text-center">
-                                <button type="button" class="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-700 border border-blue-300 rounded-lg hover:bg-blue-200 transition">
-                                    <i class="fas fa-plus mr-2"></i> Tambah Alat Lain
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Informasi Waktu -->
-                        <div class="mb-6">
-                            <h3 class="text-lg font-semibold text-gray-800 border-b pb-2 mb-4 flex items-center">
-                                <i class="fas fa-clock mr-2 text-blue-600"></i>Informasi Waktu Peminjaman
-                            </h3>
-
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-gray-700 text-sm font-medium mb-2" for="tanggal_pinjam">
-                                        Tanggal Pinjam <span class="text-red-500">*</span>
-                                    </label>
-                                    <input type="date" id="tanggal_pinjam" name="tanggal_pinjam" required
-                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <!-- Alat 2 -->
+                            <div class="alat-item bg-gray-50 rounded-lg p-4 mb-4 border border-gray-200">
+                                <div class="flex justify-between items-center mb-3">
+                                    <h4 class="font-medium text-blue-700">Alat #2</h4>
                                 </div>
 
-                                <div>
-                                    <label class="block text-gray-700 text-sm font-medium mb-2" for="tanggal_kembali">
-                                        Tanggal Kembali <span class="text-red-500">*</span>
-                                    </label>
-                                    <input type="date" id="tanggal_kembali" name="tanggal_kembali" required
-                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                </div>
-
-                                <div>
-                                    <label class="block text-gray-700 text-sm font-medium mb-2" for="waktu_pinjam">
-                                        Waktu Pengambilan <span class="text-red-500">*</span>
-                                    </label>
-                                    <input type="time" id="waktu_pinjam" name="waktu_pinjam" required
-                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                </div>
-
-                                <div>
-                                    <label class="block text-gray-700 text-sm font-medium mb-2" for="lokasi_penggunaan">
-                                        Lokasi Penggunaan <span class="text-red-500">*</span>
-                                    </label>
-                                    <select id="lokasi_penggunaan" name="lokasi_penggunaan" required
-                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                                        <option value="">Pilih Lokasi</option>
-                                        <option value="dalam_lab">Di Dalam Lab</option>
-                                        <option value="luar_lab">Di Luar Lab (Dalam Kampus)</option>
-                                        <option value="luar_kampus">Di Luar Kampus</option>
-                                    </select>
-                                </div>
-
-                                <div class="md:col-span-2">
-                                    <label class="block text-gray-700 text-sm font-medium mb-2" for="detail_lokasi">
-                                        Detail Lokasi Penggunaan <span class="text-red-500">*</span>
-                                    </label>
-                                    <textarea id="detail_lokasi" name="detail_lokasi" rows="2" required
-                                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Dokumen Pendukung -->
-                        <div class="mb-6">
-                            <h3 class="text-lg font-semibold text-gray-800 border-b pb-2 mb-4 flex items-center">
-                                <i class="fas fa-file-alt mr-2 text-blue-600"></i>Dokumen Pendukung
-                            </h3>
-
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-gray-700 text-sm font-medium mb-2" for="surat_permohonan">
-                                        Surat Permohonan <span class="text-red-500">*</span>
-                                    </label>
-                                    <div class="flex items-center justify-center w-full">
-                                        <label for="surat_permohonan" class="flex flex-col items-center justify-center w-full h-32 border-2 border-blue-300 border-dashed rounded-lg cursor-pointer bg-blue-50 hover:bg-blue-100">
-                                            <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                                                <i class="fas fa-cloud-upload-alt text-3xl text-blue-500 mb-2"></i>
-                                                <p class="mb-1 text-sm text-gray-600">Klik untuk upload file</p>
-                                                <p class="text-xs text-gray-500">PDF atau JPG (Maks. 2MB)</p>
-                                            </div>
-                                            <input id="surat_permohonan" type="file" class="hidden" required />
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-gray-700 text-sm font-medium mb-2" for="kategori_alat_2">
+                                            Kategori Alat
                                         </label>
+                                        <select id="kategori_alat_2" name="kategori_alat_2"
+                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                            <option value="">Pilih Kategori</option>
+                                            <option value="optik">Alat Optik</option>
+                                            <option value="ukur">Alat Ukur</option>
+                                            <option value="kimia">Alat Kimia</option>
+                                            <option value="elektronik">Alat Elektronik</option>
+                                            <option value="mekanik">Alat Mekanik</option>
+                                            <option value="biologi">Alat Biologi</option>
+                                        </select>
                                     </div>
-                                </div>
 
-                                <div>
-                                    <label class="block text-gray-700 text-sm font-medium mb-2" for="kartu_identitas">
-                                        Kartu Identitas <span class="text-red-500">*</span>
-                                    </label>
-                                    <div class="flex items-center justify-center w-full">
-                                        <label for="kartu_identitas" class="flex flex-col items-center justify-center w-full h-32 border-2 border-blue-300 border-dashed rounded-lg cursor-pointer bg-blue-50 hover:bg-blue-100">
-                                            <div class="flex flex-col items-center justify-center pt-5 pb-6">
-                                                <i class="fas fa-cloud-upload-alt text-3xl text-blue-500 mb-2"></i>
-                                                <p class="mb-1 text-sm text-gray-600">Klik untuk upload file</p>
-                                                <p class="text-xs text-gray-500">PDF atau JPG (Maks. 2MB)</p>
-                                            </div>
-                                            <input id="kartu_identitas" type="file" class="hidden" required />
+                                    <div>
+                                        <label class="block text-gray-700 text-sm font-medium mb-2" for="nama_alat_2">
+                                            Nama Alat
                                         </label>
+                                        <select id="nama_alat_2" name="nama_alat_2"
+                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                            <option value="">Pilih Alat</option>
+                                            <option value="mikroskop">Mikroskop</option>
+                                            <option value="spektrofotometer">Spektrofotometer</option>
+                                            <option value="ph_meter">pH Meter</option>
+                                            <option value="neraca_analitik">Neraca Analitik</option>
+                                            <option value="hot_plate">Hot Plate</option>
+                                            <option value="oven">Oven Laboratorium</option>
+                                            <option value="autoclave">Autoclave</option>
+                                            <option value="sentrifugasi">Sentrifugasi</option>
+                                        </select>
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-gray-700 text-sm font-medium mb-2" for="kode_alat_2">
+                                            Kode Alat
+                                        </label>
+                                        <input type="text" id="kode_alat_2" name="kode_alat_2"
+                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Masukan kode alat">
+                                    </div>
+
+                                    <div>
+                                        <label class="block text-gray-700 text-sm font-medium mb-2" for="jumlah_2">
+                                            Jumlah
+                                        </label>
+                                        <input type="number" id="jumlah_2" name="jumlah_2" min="1" value="1"
+                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    </div>
+
+                                    <div class="md:col-span-2">
+                                        <label class="block text-gray-700 text-sm font-medium mb-2" for="keperluan_2">
+                                            Keperluan Penggunaan
+                                        </label>
+                                        <textarea id="keperluan_2" name="keperluan_2" rows="2"
+                                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Jelaskan keperluan penggunaan"></textarea>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Info Persetujuan -->
-                        <div class="mb-6 bg-yellow-50 border border-yellow-200 rounded-lg p-4">
-                            <h3 class="text-md font-semibold text-yellow-800 mb-2 flex items-center">
-                                <i class="fas fa-exclamation-triangle mr-2"></i>Informasi Penting
-                            </h3>
-                            <ul class="list-disc pl-5 text-sm text-yellow-800 space-y-1">
-                                <li>Peminjam bertanggung jawab penuh atas alat yang dipinjam</li>
-                                <li>Pengembalian alat harus sesuai dengan jadwal yang telah ditentukan</li>
-                                <li>Kerusakan/kehilangan alat menjadi tanggung jawab peminjam</li>
-                                <li>Terlambat mengembalikan akan dikenakan denda sesuai peraturan</li>
-                                <li>Pengambilan alat dilakukan oleh peminjam sendiri dengan menunjukkan kartu identitas asli</li>
-                            </ul>
+                        <div class="text-center">
+                            <button type="button" class="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-700 border border-blue-300 rounded-lg hover:bg-blue-200 transition">
+                                <i class="fas fa-plus mr-2"></i> Tambah Alat Lain
+                            </button>
                         </div>
+                    </div>
 
-                        <!-- Persetujuan -->
-                        <div class="mb-6">
-                            <div class="flex items-start">
-                                <div class="flex items-center h-5">
-                                    <input id="persetujuan" type="checkbox" required class="w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
-                                </div>
-                                <label for="persetujuan" class="ml-2 text-sm text-gray-600">
-                                    Saya menyatakan bahwa informasi yang saya berikan adalah benar dan saya akan bertanggung jawab atas alat yang saya pinjam serta akan mematuhi seluruh peraturan yang berlaku. <span class="text-red-500">*</span>
+                    <!-- Informasi Waktu -->
+                    <div class="mb-6">
+                        <h3 class="text-lg font-semibold text-gray-800 border-b pb-2 mb-4 flex items-center">
+                            <i class="fas fa-clock mr-2 text-blue-600"></i>Informasi Waktu Peminjaman
+                        </h3>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-2" for="tanggal_pinjam">
+                                    Tanggal Pinjam <span class="text-red-500">*</span>
                                 </label>
+                                <input type="date" id="tanggal_pinjam" name="tanggal_pinjam" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-2" for="tanggal_kembali">
+                                    Tanggal Kembali <span class="text-red-500">*</span>
+                                </label>
+                                <input type="date" id="tanggal_kembali" name="tanggal_kembali" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-2" for="waktu_pinjam">
+                                    Waktu Pengambilan <span class="text-red-500">*</span>
+                                </label>
+                                <input type="time" id="waktu_pinjam" name="waktu_pinjam" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-2" for="lokasi_penggunaan">
+                                    Lokasi Penggunaan <span class="text-red-500">*</span>
+                                </label>
+                                <select id="lokasi_penggunaan" name="lokasi_penggunaan" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option value="">Pilih Lokasi</option>
+                                    <option value="dalam_lab">Di Dalam Lab</option>
+                                    <option value="luar_lab">Di Luar Lab (Dalam Kampus)</option>
+                                    <option value="luar_kampus">Di Luar Kampus</option>
+                                </select>
+                            </div>
+
+                            <div class="md:col-span-2">
+                                <label class="block text-gray-700 text-sm font-medium mb-2" for="detail_lokasi">
+                                    Detail Lokasi Penggunaan <span class="text-red-500">*</span>
+                                </label>
+                                <textarea id="detail_lokasi" name="detail_lokasi" rows="2" required
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- Tombol Submit -->
-                        <div class="flex flex-col md:flex-row justify-end space-y-4 md:space-y-0 md:space-x-4">
-                            <button type="reset" class="px-6 py-2 bg-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-400 transition">
-                                <i class="fas fa-undo mr-2"></i>Reset
-                            </button>
-                            <button type="submit" class="px-6 py-2 bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-medium rounded-lg hover:from-blue-700 hover:to-indigo-800 transition">
-                                <i class="fas fa-paper-plane mr-2"></i>Kirim Permohonan
-                            </button>
+                    <!-- Dokumen Pendukung -->
+                    <div class="mb-6">
+                        <h3 class="text-lg font-semibold text-gray-800 border-b pb-2 mb-4 flex items-center">
+                            <i class="fas fa-file-alt mr-2 text-blue-600"></i>Dokumen Pendukung
+                        </h3>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-2" for="surat_permohonan">
+                                    Surat Permohonan <span class="text-red-500">*</span>
+                                </label>
+                                <div class="flex items-center justify-center w-full">
+                                    <label for="surat_permohonan" class="flex flex-col items-center justify-center w-full h-32 border-2 border-blue-300 border-dashed rounded-lg cursor-pointer bg-blue-50 hover:bg-blue-100">
+                                        <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                            <i class="fas fa-cloud-upload-alt text-3xl text-blue-500 mb-2"></i>
+                                            <p class="mb-1 text-sm text-gray-600">Klik untuk upload file</p>
+                                            <p class="text-xs text-gray-500">PDF atau JPG (Maks. 2MB)</p>
+                                        </div>
+                                        <input id="surat_permohonan" type="file" class="hidden" required />
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-2" for="kartu_identitas">
+                                    Kartu Identitas <span class="text-red-500">*</span>
+                                </label>
+                                <div class="flex items-center justify-center w-full">
+                                    <label for="kartu_identitas" class="flex flex-col items-center justify-center w-full h-32 border-2 border-blue-300 border-dashed rounded-lg cursor-pointer bg-blue-50 hover:bg-blue-100">
+                                        <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                            <i class="fas fa-cloud-upload-alt text-3xl text-blue-500 mb-2"></i>
+                                            <p class="mb-1 text-sm text-gray-600">Klik untuk upload file</p>
+                                            <p class="text-xs text-gray-500">PDF atau JPG (Maks. 2MB)</p>
+                                        </div>
+                                        <input id="kartu_identitas" type="file" class="hidden" required />
+                                    </label>
+                                </div>
+                            </div>
                         </div>
+                    </div>
+
+                    <!-- Info Persetujuan -->
+                    <div class="mb-6 bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                        <h3 class="text-md font-semibold text-yellow-800 mb-2 flex items-center">
+                            <i class="fas fa-exclamation-triangle mr-2"></i>Informasi Penting
+                        </h3>
+                        <ul class="list-disc pl-5 text-sm text-yellow-800 space-y-1">
+                            <li>Peminjam bertanggung jawab penuh atas alat yang dipinjam</li>
+                            <li>Pengembalian alat harus sesuai dengan jadwal yang telah ditentukan</li>
+                            <li>Kerusakan/kehilangan alat menjadi tanggung jawab peminjam</li>
+                            <li>Terlambat mengembalikan akan dikenakan denda sesuai peraturan</li>
+                            <li>Pengambilan alat dilakukan oleh peminjam sendiri dengan menunjukkan kartu identitas asli</li>
+                        </ul>
+                    </div>
+
+                    <!-- Persetujuan -->
+                    <div class="mb-6">
+                        <div class="flex items-start">
+                            <div class="flex items-center h-5">
+                                <input id="persetujuan" type="checkbox" required class="w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500">
+                            </div>
+                            <label for="persetujuan" class="ml-2 text-sm text-gray-600">
+                                Saya menyatakan bahwa informasi yang saya berikan adalah benar dan saya akan bertanggung jawab atas alat yang saya pinjam serta akan mematuhi seluruh peraturan yang berlaku. <span class="text-red-500">*</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Tombol Submit -->
+                    <div class="flex flex-col md:flex-row justify-end space-y-4 md:space-y-0 md:space-x-4">
+                        <button type="reset" class="px-6 py-2 bg-gray-300 text-gray-700 font-medium rounded-lg hover:bg-gray-400 transition">
+                            <i class="fas fa-undo mr-2"></i>Reset
+                        </button>
+                        <button type="submit" class="px-6 py-2 bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-medium rounded-lg hover:from-blue-700 hover:to-indigo-800 transition">
+                            <i class="fas fa-paper-plane mr-2"></i>Kirim Permohonan
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -494,7 +562,7 @@
                 <h3 class="text-lg font-semibold">Jam Operasional</h3>
                 <p class="text-gray-400">Senin - Kamis: 07.30 - 04.00</p>
                 <p class="text-gray-400">Jumat: 07.30 - 04.30</p>
-                <p class="text-gray-400">Minggu & Hari Libur: Tutup</p>
+                <p class="text-gray-400">Sabtu-Minggu & Hari Libur: Tutup</p>
             </div>
         </div>
         <div class="text-center text-gray-500 mt-6">
