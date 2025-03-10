@@ -15,13 +15,25 @@ use Illuminate\Support\Facades\Route;
 
 // ==== Contact Mail ====
 
-Route::get('/peminjamanlab', function () {
-    return view('peminjamanlab.index');
-})->name('peminjamanlab');
+Route::prefix('peminjamanlab')->group(function () {
+    Route::get('/', function () {
+        return view('peminjamanlab.index');
+    })->name('peminjamanlab');
 
-Route::get('/peminjamanalat', function () {
-    return view('peminjamanalat.index');
-})->name('peminjamanalat');
+    Route::get('/create', function () {
+        return view('peminjamanlab.create');
+    })->name('peminjamanlab.create');
+});
+
+Route::prefix('peminjamanalat')->group(function () {
+    Route::get('/', function () {
+        return view('peminjamanalat.index');
+    })->name('peminjamanalat');
+
+    Route::get('/create', function () {
+        return view('peminjamanalat.create');
+    })->name('peminjamanalat.create');
+});
 
 Route::get('/', function () {
     return view('welcome');

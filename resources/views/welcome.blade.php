@@ -12,7 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 </head>
 
-<body class="bg-gradient-to-r from-blue-600 to-sky-300 text-white overflow-x-hidden">
+<body class="bg-gradient-to-r from-blue-600 to-sky-300 text-white">
     <!-- Navbar -->
     <nav id="navbar" class="fixed top-0 left-0 w-full bg-white shadow-md z-50 transition-all duration-300 ease-out flex items-center justify-between px-4 sm:px-6 py-3"
         data-aos="fade-down" data-aos-delay="300">
@@ -34,13 +34,7 @@
         <div class="hidden md:flex items-center gap-x-4 lg:gap-x-6">
             <!-- Dropdown Home -->
             <div class="relative group">
-                <button class="text-gray-800 font-semibold flex items-center gap-x-1 hover:text-gray-600">
-                    Home <span class="material-icons">arrow_drop_down</span>
-                </button>
-                <div class="absolute hidden bg-white shadow-md rounded-md border border-indigo-300 group-hover:block w-52">
-                    <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Submenu 1</a>
-                    <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Submenu 2</a>
-                </div>
+                <button class="text-gray-800 font-semibold flex items-center gap-x-1 hover:text-gray-600"><a href="{{ route('home') }}">Home</a></button>
             </div>
 
             <!-- Dropdown Tentang -->
@@ -79,19 +73,11 @@
             <!-- Dropdown Jadwal -->
             <div class="relative group">
                 <button class="text-gray-800 font-semibold flex items-center gap-x-1 hover:text-gray-600">Jadwal</button>
-                <div class="absolute hidden bg-white shadow-md rounded-md border border-indigo-300 group-hover:block w-52">
-                    <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Layanan 1</a>
-                    <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Layanan 2</a>
-                </div>
             </div>
 
             <!-- Dropdown Contact -->
             <div class="relative group">
-                <button class="text-gray-800 font-semibold flex items-center gap-x-1 hover:text-gray-600">Contact</button>
-                <div class="absolute hidden bg-white shadow-md rounded-md border border-indigo-300 group-hover:block w-52">
-                    <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Email</a>
-                    <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Phone</a>
-                </div>
+                <button id="button-contact" class="text-gray-800 font-semibold flex items-center gap-x-1 hover:text-gray-600">Contact</button>
             </div>
 
             <!-- Tombol Login (Desktop) -->
@@ -124,13 +110,7 @@
         <div class="space-y-4 mt-6">
             <!-- Home -->
             <div class="border-b border-gray-200 pb-2">
-                <button class="mobile-dropdown-toggle w-full text-left flex items-center justify-between text-gray-800 font-semibold">
-                    Home <span class="material-icons transition-transform duration-200">arrow_drop_down</span>
-                </button>
-                <div class="mobile-dropdown-content hidden pl-4 mt-2 space-y-2">
-                    <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Submenu 1</a>
-                    <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Submenu 2</a>
-                </div>
+                <button class="mobile-dropdown-toggle w-full text-left flex items-center justify-between text-gray-800 font-semibold"><a href="{{ route('home') }}">Home</a></button>
             </div>
 
             <!-- Tentang Kami -->
@@ -168,24 +148,12 @@
 
             <!-- Jadwal -->
             <div class="border-b border-gray-200 pb-2">
-                <button class="mobile-dropdown-toggle w-full text-left flex items-center justify-between text-gray-800 font-semibold">
-                    Jadwal <span class="material-icons transition-transform duration-200">arrow_drop_down</span>
-                </button>
-                <div class="mobile-dropdown-content hidden pl-4 mt-2 space-y-2">
-                    <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Layanan 1</a>
-                    <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Layanan 2</a>
-                </div>
+                <button class="mobile-dropdown-toggle w-full text-left flex items-center justify-between text-gray-800 font-semibold">Jadwal</button>
             </div>
 
             <!-- Contact -->
             <div class="border-b border-gray-200 pb-2">
-                <button class="mobile-dropdown-toggle w-full text-left flex items-center justify-between text-gray-800 font-semibold">
-                    Contact <span class="material-icons transition-transform duration-200">arrow_drop_down</span>
-                </button>
-                <div class="mobile-dropdown-content hidden pl-4 mt-2 space-y-2">
-                    <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Email</a>
-                    <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Phone</a>
-                </div>
+                <button id="button-contact" class="mobile-dropdown-toggle w-full text-left flex items-center justify-between text-gray-800 font-semibold">Contact</button>
             </div>
 
             <!-- Tombol Login (Mobile) -->
@@ -540,14 +508,14 @@
                                 fill="#3f3d56" />
                         </svg>
                     </div>
-                    <div class="flex flex-col items-center w-full sm:w-1/2 pr-8 py-8 mt-6">
-                        <h3 class="text-3xl text-gray-800 group-hover:text-white font-bold leading-none mb-3">
+                    <div class="flex flex-col items-center w-5/6 sm:w-1/2 px-4 sm:px-0 py-8">
+                        <h3 class="text-2xl sm:text-3xl text-gray-800 group-hover:text-white font-bold leading-none mb-3 text-center sm:text-left">
                             Peminjaman Alat
                         </h3>
                         <p class="text-sm sm:text-base md:text-lg text-left sm:text-justify leading-normal sm:leading-relaxed max-w-2xl text-gray-600 group-hover:text-white">
                             Laboratorium Terpadu menyediakan berbagai inventaris yang dapat disewakan, seperti Proyektor, LCD, dan peralatan lainnya, untuk mendukung kebutuhan akademik maupun kegiatan lainnya.
                         </p>
-                        <a href="peminjamanalat"
+                        <a href="{{ route('peminjamanalat') }}"
                             class="mb-8 mt-auto px-6 py-3 text-lg font-semibold text-white bg-gradient-to-r from-indigo-600 to-blue-500 
                             rounded-full shadow-lg hover:from-blue-500 hover:to-indigo-600 hover:text-white 
                             transform hover:scale-110 transition duration-300 ease-in-out">
@@ -559,6 +527,30 @@
         </div>
     </section>
 
+    <!-- Footer -->
+    <footer id="fotter-section" class="bg-gray-900 text-white py-8 px-4 mt-auto w-full">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 text-center md:text-left">
+            <div>
+                <h3 class="text-lg font-semibold">Laboratorium Terpadu</h3>
+                <p class="text-gray-400">Menyediakan fasilitas laboratorium modern dan lengkap untuk kegiatan praktikum, penelitian, dan pengembangan.</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold">Kontak Kami</h3>
+                <p class="text-gray-400">Jl. Pangeran Ratu, 5 Ulu, Kecamatan Seberang Ulu I, Kota Palembang, Sumatera Selatan 30267</p>
+                <p class="text-gray-400">(021) 1234-5678</p>
+                <p class="text-gray-400">labter@uinrafa.ac.id</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold">Jam Operasional</h3>
+                <p class="text-gray-400">Senin - Kamis: 07.30 - 04.00</p>
+                <p class="text-gray-400">Jumat: 07.30 - 04.30</p>
+                <p class="text-gray-400">Minggu & Hari Libur: Tutup</p>
+            </div>
+        </div>
+        <div class="text-center text-gray-500 mt-6">
+            © 2025 Laboratorium Terpadu. Hak Cipta Dilindungi.
+        </div>
+    </footer>
 
     <script>
         AOS.init({
@@ -637,6 +629,16 @@
         document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("scroll-button").addEventListener("click", function() {
                 let targetSection = document.getElementById("next-section");
+                let offset = 50; // Ubah nilai ini untuk mengatur jarak dari atas (misal: navbar tinggi 50px)
+                let targetPosition = targetSection.offsetTop - offset;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: "smooth"
+                });
+            });
+            document.getElementById("button-contact").addEventListener("click", function() {
+                let targetSection = document.getElementById("fotter-section");
                 let offset = 50; // Ubah nilai ini untuk mengatur jarak dari atas (misal: navbar tinggi 50px)
                 let targetPosition = targetSection.offsetTop - offset;
 

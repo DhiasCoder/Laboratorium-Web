@@ -11,7 +11,7 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 </head>
 
-<body class="bg-gradient-to-r from-blue-600 to-sky-300 text-white overflow-x-hidden">
+<body class="bg-gradient-to-r from-blue-600 to-sky-300 text-white">
     <!-- Navbar -->
     <nav id="navbar" class="fixed top-0 left-0 w-full bg-white shadow-md z-50 transition-all duration-300 ease-out flex items-center justify-between px-4 sm:px-6 py-3"
         data-aos="fade-down" data-aos-delay="300">
@@ -33,13 +33,7 @@
         <div class="hidden md:flex items-center gap-x-4 lg:gap-x-6">
             <!-- Dropdown Home -->
             <div class="relative group">
-                <button class="text-gray-800 font-semibold flex items-center gap-x-1 hover:text-gray-600">
-                    Home <span class="material-icons">arrow_drop_down</span>
-                </button>
-                <div class="absolute hidden bg-white shadow-md rounded-md border border-indigo-300 group-hover:block w-52">
-                    <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Submenu 1</a>
-                    <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Submenu 2</a>
-                </div>
+                <button class="text-gray-800 font-semibold flex items-center gap-x-1 hover:text-gray-600"><a href="{{ route('home') }}">Home</a></button>
             </div>
 
             <!-- Dropdown Tentang -->
@@ -78,19 +72,11 @@
             <!-- Dropdown Jadwal -->
             <div class="relative group">
                 <button class="text-gray-800 font-semibold flex items-center gap-x-1 hover:text-gray-600">Jadwal</button>
-                <div class="absolute hidden bg-white shadow-md rounded-md border border-indigo-300 group-hover:block w-52">
-                    <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Layanan 1</a>
-                    <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Layanan 2</a>
-                </div>
             </div>
 
             <!-- Dropdown Contact -->
             <div class="relative group">
-                <button class="text-gray-800 font-semibold flex items-center gap-x-1 hover:text-gray-600">Contact</button>
-                <div class="absolute hidden bg-white shadow-md rounded-md border border-indigo-300 group-hover:block w-52">
-                    <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Email</a>
-                    <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Phone</a>
-                </div>
+                <button id="button-contact" class="text-gray-800 font-semibold flex items-center gap-x-1 hover:text-gray-600">Contact</button>
             </div>
 
             <!-- Tombol Login (Desktop) -->
@@ -104,6 +90,15 @@
         </div>
     </nav>
 
+    <!-- Tombol Panah ke Bawah -->
+    <div class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-10">
+        <button id="scroll-buttons" class="animate-bounce bg-white bg-opacity-80 rounded-full shadow-lg transition hover:bg-opacity-100 hover:scale-110 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
+            <svg class="w-5 h-5 sm:w-6 sm:h-6 text-gray-800" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+        </button>
+    </div>
+
     <!-- Mobile Menu (Terpisah dari navbar untuk menghindari masalah dengan fixed position) -->
     <div id="mobile-menu" class="fixed inset-0 bg-white z-50 hidden flex-col pt-16 pb-6 px-4 w-full h-full overflow-y-auto md:hidden">
         <button id="close-menu-button" class="absolute top-4 right-4 text-gray-800">
@@ -114,13 +109,7 @@
         <div class="space-y-4 mt-6">
             <!-- Home -->
             <div class="border-b border-gray-200 pb-2">
-                <button class="mobile-dropdown-toggle w-full text-left flex items-center justify-between text-gray-800 font-semibold">
-                    Home <span class="material-icons transition-transform duration-200">arrow_drop_down</span>
-                </button>
-                <div class="mobile-dropdown-content hidden pl-4 mt-2 space-y-2">
-                    <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Submenu 1</a>
-                    <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Submenu 2</a>
-                </div>
+                <button class="mobile-dropdown-toggle w-full text-left flex items-center justify-between text-gray-800 font-semibold"><a href="{{ route('home') }}">Home</a></button>
             </div>
 
             <!-- Tentang Kami -->
@@ -158,24 +147,12 @@
 
             <!-- Jadwal -->
             <div class="border-b border-gray-200 pb-2">
-                <button class="mobile-dropdown-toggle w-full text-left flex items-center justify-between text-gray-800 font-semibold">
-                    Jadwal <span class="material-icons transition-transform duration-200">arrow_drop_down</span>
-                </button>
-                <div class="mobile-dropdown-content hidden pl-4 mt-2 space-y-2">
-                    <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Layanan 1</a>
-                    <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Layanan 2</a>
-                </div>
+                <button class="mobile-dropdown-toggle w-full text-left flex items-center justify-between text-gray-800 font-semibold">Jadwal</button>
             </div>
 
             <!-- Contact -->
             <div class="border-b border-gray-200 pb-2">
-                <button class="mobile-dropdown-toggle w-full text-left flex items-center justify-between text-gray-800 font-semibold">
-                    Contact <span class="material-icons transition-transform duration-200">arrow_drop_down</span>
-                </button>
-                <div class="mobile-dropdown-content hidden pl-4 mt-2 space-y-2">
-                    <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Email</a>
-                    <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Phone</a>
-                </div>
+                <button id="button-contact" class="mobile-dropdown-toggle w-full text-left flex items-center justify-between text-gray-800 font-semibold">Contact</button>
             </div>
 
             <!-- Tombol Login (Mobile) -->
@@ -279,10 +256,35 @@
 
             <div class="flex flex-col sm:flex-row justify-center items-center mt-8 gap-4">
                 <a href="{{ route('home') }}" class="bg-gray-800 text-white px-6 py-3 rounded-lg font-bold hover:bg-orange-500 transition transform hover:scale-105">Kembali</a>
-                <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700 transition transform hover:scale-105">Isi Formulir</a>
+                <a href="{{ route('peminjamanalat.create') }}" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700 transition transform hover:scale-105">Isi Formulir</a>
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer id="fotter-section" class="bg-gray-900 text-white py-8 px-4 mt-auto w-full">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 text-center md:text-left">
+            <div>
+                <h3 class="text-lg font-semibold">Laboratorium Terpadu</h3>
+                <p class="text-gray-400">Menyediakan fasilitas laboratorium modern dan lengkap untuk kegiatan praktikum, penelitian, dan pengembangan.</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold">Kontak Kami</h3>
+                <p class="text-gray-400">Jl. Pangeran Ratu, 5 Ulu, Kecamatan Seberang Ulu I, Kota Palembang, Sumatera Selatan 30267</p>
+                <p class="text-gray-400">(021) 1234-5678</p>
+                <p class="text-gray-400">labter@uinrafa.ac.id</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold">Jam Operasional</h3>
+                <p class="text-gray-400">Senin - Kamis: 07.30 - 04.00</p>
+                <p class="text-gray-400">Jumat: 07.30 - 04.30</p>
+                <p class="text-gray-400">Minggu & Hari Libur: Tutup</p>
+            </div>
+        </div>
+        <div class="text-center text-gray-500 mt-6">
+            © 2025 Laboratorium Terpadu. Hak Cipta Dilindungi.
+        </div>
+    </footer>
 
     <script>
         AOS.init({
@@ -357,6 +359,16 @@
             });
         });
         document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("button-contact").addEventListener("click", function() {
+                let targetSection = document.getElementById("fotter-section");
+                let offset = 50; // Ubah nilai ini untuk mengatur jarak dari atas (misal: navbar tinggi 50px)
+                let targetPosition = targetSection.offsetTop - offset;
+
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: "smooth"
+                });
+            });
             let scrollButton = document.getElementById("scroll-button");
             let buttonContainer = scrollButton.parentElement;
             let targetSection = document.getElementById("next-section");
