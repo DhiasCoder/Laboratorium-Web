@@ -20,7 +20,7 @@
         <!-- Logo -->
         <div class="flex items-center gap-x-2 sm:gap-x-3">
             <a href="{{ route('home') }}" class="flex items-center">
-                <img src="{{ asset('assets/images/logouin.png') }}" alt="Logo" class="h-8 sm:h-10 w-auto">
+                <img src="{{asset('assets/images/logouin.png')}}" alt="Logo" class="h-8 sm:h-10 w-auto">
                 <span class="text-base sm:text-xl font-bold text-gray-800">LABORATORIUM</span>
             </a>
         </div>
@@ -166,10 +166,42 @@
         </div>
     </div>
 
-    <div class="min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat px-4 pt-24 overflow-hidden"
-        style="background-image: url('https://labterpadu.radenfatah.ac.id/wp-content/uploads/2023/01/cropped-IMG_5649-scaled-1-1536x962.jpg');">
+    <div class="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat px-4 pt-24 overflow-hidden">
+        <!-- Carousel sebagai Background -->
+        <div class="absolute inset-0 w-full h-full z-0">
+            <div class="relative w-full h-full overflow-hidden">
+                <div id="carousel" class="flex w-full h-full transition-transform duration-500 ease-out">
+                    <div class="w-full flex-shrink-0 h-full">
+                        <img src="https://labterpadu.radenfatah.ac.id/wp-content/uploads/2023/01/cropped-IMG_5649-scaled-1-1536x962.jpg" class="w-full h-full object-cover">
+                    </div>
+                    <div class="w-full flex-shrink-0 h-full">
+                        <img src="https://palpres.disway.id/upload/90abd9e9c0f6e82950b5c599c00d72f5.jpeg" class="w-full h-full object-cover">
+                    </div>
+                    <div class="w-full flex-shrink-0 h-full">
+                        <img src="https://liputangampongnews.id/assets/img/berita/IMG-20230708-WA0022.jpg" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
 
-        <div class="container mx-auto flex flex-wrap flex-col md:flex-row items-center 
+        <!-- Tombol Prev & Next -->
+        <button id="prevBtn" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full">
+            &#10094;
+        </button>
+
+        <button id="nextBtn" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full">
+            &#10095;
+        </button>
+
+        <!-- Indicator -->
+        <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+            <span class="indicator w-3 h-3 rounded-full bg-white cursor-pointer" data-index="0"></span>
+            <span class="indicator w-3 h-3 rounded-full bg-gray-500 cursor-pointer" data-index="1"></span>
+            <span class="indicator w-3 h-3 rounded-full bg-gray-500 cursor-pointer" data-index="2"></span>
+        </div>
+
+        <!-- Kontainer Konten -->
+        <div class="relative z-10 container mx-auto flex flex-wrap flex-col md:flex-row items-center 
         bg-white bg-opacity-70 p-8 sm:p-16 md:p-20 rounded-lg shadow-lg w-11/12 md:w-4/5 max-w-screen-lg"
             data-aos="fade-up" data-aos-delay="100">
 
@@ -556,6 +588,123 @@
         AOS.init({
             once: false, // Animasi hanya berjalan sekali
         });
+        document.addEventListener("DOMContentLoaded", function() {
+            let currentIndex = 0;
+            let startX = 0;
+            let isDragging = false;
+            let autoSlideInterval;
+
+            const slides = document.querySelectorAll("#carousel > div");
+            const totalSlides = slides.length;
+            const carousel = document.getElementById("carousel");
+            const indicators = document.querySelectorAll(".indicator");
+
+            function updateSlide(index, smooth = true) {
+                if (smooth) {
+                    carousel.style.transition = "transform 0.6s ease-in-out"; // Efek lebih smooth
+                } else {
+                    carousel.style.transition = "none";
+                }
+                carousel.style.transform = `translateX(-${index * 100}%)`;
+
+                indicators.forEach(ind => ind.classList.replace("bg-white", "bg-gray-500"));
+                indicators[index].classList.replace("bg-gray-500", "bg-white");
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateSlide(currentIndex);
+            }
+
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                updateSlide(currentIndex);
+            }
+
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(nextSlide, 5000); // Auto-slide lebih lama & smooth
+            }
+
+            function stopAutoSlide() {
+                clearInterval(autoSlideInterval);
+            }
+
+            // **Event Listeners**
+            document.getElementById("nextBtn").addEventListener("click", function() {
+                stopAutoSlide();
+                nextSlide();
+                startAutoSlide();
+            });
+
+            document.getElementById("prevBtn").addEventListener("click", function() {
+                stopAutoSlide();
+                prevSlide();
+                startAutoSlide();
+            });
+
+            indicators.forEach(indicator => {
+                indicator.addEventListener("click", function() {
+                    stopAutoSlide();
+                    currentIndex = parseInt(this.getAttribute("data-index"));
+                    updateSlide(currentIndex);
+                    startAutoSlide();
+                });
+            });
+
+            // **Swipe Gesture (HP & Mouse Drag)**
+            carousel.addEventListener("touchstart", function(e) {
+                startX = e.touches[0].clientX;
+                isDragging = true;
+            });
+
+            carousel.addEventListener("touchmove", function(e) {
+                if (!isDragging) return;
+                let moveX = e.touches[0].clientX - startX;
+                if (Math.abs(moveX) > 50) {
+                    stopAutoSlide();
+                    if (moveX > 0) {
+                        prevSlide();
+                    } else {
+                        nextSlide();
+                    }
+                    startAutoSlide();
+                    isDragging = false;
+                }
+            });
+
+            carousel.addEventListener("touchend", function() {
+                isDragging = false;
+            });
+
+            // **Mouse Drag (Desktop)**
+            carousel.addEventListener("mousedown", function(e) {
+                startX = e.clientX;
+                isDragging = true;
+            });
+
+            carousel.addEventListener("mousemove", function(e) {
+                if (!isDragging) return;
+                let moveX = e.clientX - startX;
+                if (Math.abs(moveX) > 50) {
+                    stopAutoSlide();
+                    if (moveX > 0) {
+                        prevSlide();
+                    } else {
+                        nextSlide();
+                    }
+                    startAutoSlide();
+                    isDragging = false;
+                }
+            });
+
+            carousel.addEventListener("mouseup", function() {
+                isDragging = false;
+            });
+
+            // **Mulai Auto Slide**
+            startAutoSlide();
+        });
+
         document.addEventListener("DOMContentLoaded", function() {
             let scrollButton = document.getElementById("scroll-buttons");
             let buttonContainer = scrollButton.parentElement;
