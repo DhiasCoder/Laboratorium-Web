@@ -175,10 +175,10 @@
                         <img src="https://labterpadu.radenfatah.ac.id/wp-content/uploads/2023/01/cropped-IMG_5649-scaled-1-1536x962.jpg" class="w-full h-full object-cover">
                     </div>
                     <div class="w-full flex-shrink-0 h-full">
-                        <img src="https://palpres.disway.id/upload/90abd9e9c0f6e82950b5c599c00d72f5.jpeg" class="w-full h-full object-cover">
+                        <img src="https://bacakoran.co/upload/f2de772f9971815598883fd732bfd349.jpeg" class="w-full h-full object-cover">
                     </div>
                     <div class="w-full flex-shrink-0 h-full">
-                        <img src="https://liputangampongnews.id/assets/img/berita/IMG-20230708-WA0022.jpg" class="w-full h-full object-cover">
+                        <img src="https://radenfatah.ac.id/wp-content/uploads/2024/06/Desain-tanpa-judul-49.jpg" class="w-full h-full object-cover">
                     </div>
                 </div>
             </div>
