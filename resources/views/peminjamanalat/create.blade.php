@@ -170,9 +170,9 @@
         <div class="max-w-4xl mx-auto">
             <div class="mb-6">
                 <div class="flex items-center space-x-2 text-gray-500 text-sm">
-                    <a href="#" class="hover:text-blue-600">Beranda</a>
+                    <a href="{{ route('home') }}" class="hover:text-blue-600">Beranda</a>
                     <i class="fas fa-chevron-right text-xs"></i>
-                    <a href="#" class="hover:text-blue-600">Peminjaman</a>
+                    <a href="{{ route('peminjamanalat') }}" class="hover:text-blue-600">Peminjaman</a>
                     <i class="fas fa-chevron-right text-xs"></i>
                     <span class="text-blue-600 font-medium">Peminjaman Alat</span>
                 </div>
