@@ -7,9 +7,11 @@
     <title>Laboratorium Raden Fatah</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 
 <body class="bg-gradient-to-r from-blue-600 to-sky-300 text-white">
@@ -166,38 +168,35 @@
         </div>
     </div>
 
-    <div class="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat px-4 pt-24 overflow-hidden">
-        <!-- Carousel sebagai Background -->
+    <div class="relative min-h-screen flex items-center justify-center px-4 pt-24 overflow-hidden">
+        <!-- Swiper sebagai Background -->
         <div class="absolute inset-0 w-full h-full z-0">
-            <div class="relative w-full h-full overflow-hidden">
-                <div id="carousel" class="flex w-full h-full transition-transform duration-500 ease-out">
-                    <div class="w-full flex-shrink-0 h-full">
-                        <img src="https://labterpadu.radenfatah.ac.id/wp-content/uploads/2023/01/cropped-IMG_5649-scaled-1-1536x962.jpg" class="w-full h-full object-cover">
+            <div class="swiper mySwiper h-full w-full">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="{{asset('assets/images/gambar1.jpg')}}" class="w-full h-full object-cover">
                     </div>
-                    <div class="w-full flex-shrink-0 h-full">
-                        <img src="https://bacakoran.co/upload/f2de772f9971815598883fd732bfd349.jpeg" class="w-full h-full object-cover">
+                    <div class="swiper-slide">
+                        <img src="{{asset('assets/images/gambar2.jpeg')}}" class="w-full h-full object-cover">
                     </div>
-                    <div class="w-full flex-shrink-0 h-full">
-                        <img src="https://radenfatah.ac.id/wp-content/uploads/2024/06/Desain-tanpa-judul-49.jpg" class="w-full h-full object-cover">
+                    <div class="swiper-slide">
+                        <img src="{{asset('assets/images/gambar3.jpg')}}" class="w-full h-full object-cover">
                     </div>
                 </div>
+                <!-- Tombol Kustom -->
+                <button class="custom-next absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 
+                bg-blue-500 text-white w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center rounded-full 
+                p-1 sm:p-2 shadow-lg bg-opacity-70 hover:bg-opacity-100 transition z-10">
+                    &#10095;
+                </button>
+
+                <button class="custom-prev absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 
+                bg-blue-500 text-white w-8 h-8 sm:w-12 sm:h-12 flex items-center justify-center rounded-full 
+                p-1 sm:p-2 shadow-lg bg-opacity-70 hover:bg-opacity-100 transition z-10">
+                    &#10094;
+                </button>
+                <div class="swiper-pagination z-10"></div>
             </div>
-        </div>
-
-        <!-- Tombol Prev & Next -->
-        <button id="prevBtn" class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full">
-            &#10094;
-        </button>
-
-        <button id="nextBtn" class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full">
-            &#10095;
-        </button>
-
-        <!-- Indicator -->
-        <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
-            <span class="indicator w-3 h-3 rounded-full bg-white cursor-pointer" data-index="0"></span>
-            <span class="indicator w-3 h-3 rounded-full bg-gray-500 cursor-pointer" data-index="1"></span>
-            <span class="indicator w-3 h-3 rounded-full bg-gray-500 cursor-pointer" data-index="2"></span>
         </div>
 
         <!-- Kontainer Konten -->
@@ -234,6 +233,15 @@
         </div>
     </div>
 
+    <!-- MODAL -->
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex justify-center items-center hidden z-50">
+        <div class="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full mx-4 relative">
+            <h2 class="text-xl font-semibold text-red-500 mb-4 text-center">Pendaftaran Sedang Tutup</h2>
+            <p class="text-gray-600 mb-4 text-center">Silakan kembali pada jam 07:00 - 12:00 atau 13:00 - 16:00 WIB.</p>
+            <button onclick="closeModal()" class="w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition transform hover:scale-105">Tutup</button>
+        </div>
+    </div>
+
     <!-- Section Layanan -->
     <section id="next-section" class="bg-white min-h-screen border-b py-8 overflow-hidden">
         <div data-aos="fade-right" data-aos-delay="100" class="bg-white p-8 shadow-lg rounded-lg">
@@ -259,13 +267,27 @@
                             Jika Anda ingin menggunakan Laboratorium Komputer di luar jam perkuliahan, silakan ajukan permohonan terlebih dahulu
                             untuk memastikan ketersediaan fasilitas dan mendapatkan akses sesuai kebutuhan Anda.
                         </p>
-                        <a href="{{ route('peminjamanlab') }}"
-                            class="mb-8 mt-auto px-6 py-3 text-lg font-semibold text-white bg-gradient-to-r from-indigo-600 to-blue-500 
+                        @php
+                        $currentTime = now('Asia/Jakarta')->format('H:i'); // Gunakan waktu server Indonesia
+                        $isOpen = ($currentTime >= "07:00" && $currentTime < "12:00" ) ||
+                            ($currentTime>= "13:00" && $currentTime < "16:00" );
+                                @endphp
+                                @if ($isOpen)
+                                <a href="{{ route('peminjamanlab') }}"
+                                class="mb-8 mt-auto px-6 py-3 text-lg font-semibold text-white bg-gradient-to-r from-indigo-600 to-blue-500 
                             rounded-full shadow-lg hover:from-blue-500 hover:to-indigo-600 hover:text-white 
                             transform hover:scale-110 transition duration-300 ease-in-out">
-                            Selengkapnya
-                        </a>
+                                Selengkapnya
+                                </a>
+                                @else
+                                <button
+                                    onclick="openModal()"
+                                    class="mb-8 mt-auto px-6 py-3 text-lg font-semibold text-white bg-gray-400 rounded-full opacity-50 cursor-not-allowed">
+                                    Pendaftaran Tutup
+                                </button>
+                                @endif
                     </div>
+
                     <div class="w-full sm:w-1/2 pr-8 py-8">
                         <svg class="w-full sm:h-64 mx-auto" id="a3fb4343-95d2-4a83-b68f-ed4eefcf6705" data-name="Layer 1"
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 715.29587 604.16998">
@@ -524,12 +546,25 @@
                         <p class="text-sm sm:text-base md:text-lg text-left sm:text-justify leading-normal sm:leading-relaxed max-w-2xl text-gray-600 group-hover:text-white">
                             Laboratorium Terpadu menyediakan berbagai inventaris yang dapat disewakan, seperti Proyektor, LCD, dan peralatan lainnya, untuk mendukung kebutuhan akademik maupun kegiatan lainnya.
                         </p>
-                        <a href="{{ route('peminjamanalat') }}"
-                            class="mb-8 mt-auto px-6 py-3 text-lg font-semibold text-white bg-gradient-to-r from-indigo-600 to-blue-500 
+                        @php
+                        $currentTime = now('Asia/Jakarta')->format('H:i'); // Gunakan waktu server Indonesia
+                        $isOpen = ($currentTime >= "07:00" && $currentTime < "12:00" ) ||
+                            ($currentTime>= "13:00" && $currentTime < "16:00" );
+                                @endphp
+                                @if ($isOpen)
+                                <a href="{{ route('peminjamanalat') }}"
+                                class="mb-8 mt-auto px-6 py-3 text-lg font-semibold text-white bg-gradient-to-r from-indigo-600 to-blue-500 
                             rounded-full shadow-lg hover:from-blue-500 hover:to-indigo-600 hover:text-white 
                             transform hover:scale-110 transition duration-300 ease-in-out">
-                            Selengkapnya
-                        </a>
+                                Selengkapnya
+                                </a>
+                                @else
+                                <button
+                                    onclick="openModal()"
+                                    class="mb-8 mt-auto px-6 py-3 text-lg font-semibold text-white bg-gray-400 rounded-full opacity-50 cursor-not-allowed">
+                                    Pendaftaran Tutup
+                                </button>
+                                @endif
                     </div>
                 </div>
             </div>
@@ -562,126 +597,38 @@
     </footer>
 
     <script>
+        function openModal() {
+            document.getElementById('modal').classList.remove('hidden');
+            document.body.classList.add('overflow-hidden', 'pointer-events-none'); // Mencegah scroll & klik elemen lain
+            document.getElementById('modal').classList.add('pointer-events-auto'); // Hanya modal yang bisa diklik
+        }
+
+        function closeModal() {
+            document.getElementById('modal').classList.add('hidden');
+            document.body.classList.remove('overflow-hidden', 'pointer-events-none'); // Kembalikan interaksi halaman
+        }
         AOS.init({
             once: false, // Animasi hanya berjalan sekali
         });
         document.addEventListener("DOMContentLoaded", function() {
-            let currentIndex = 0;
-            let startX = 0;
-            let isDragging = false;
-            let autoSlideInterval;
-
-            const slides = document.querySelectorAll("#carousel > div");
-            const totalSlides = slides.length;
-            const carousel = document.getElementById("carousel");
-            const indicators = document.querySelectorAll(".indicator");
-
-            function updateSlide(index, smooth = true) {
-                if (smooth) {
-                    carousel.style.transition = "transform 0.6s ease-in-out"; // Efek lebih smooth
-                } else {
-                    carousel.style.transition = "none";
-                }
-                carousel.style.transform = `translateX(-${index * 100}%)`;
-
-                indicators.forEach(ind => ind.classList.replace("bg-white", "bg-gray-500"));
-                indicators[index].classList.replace("bg-gray-500", "bg-white");
-            }
-
-            function nextSlide() {
-                currentIndex = (currentIndex + 1) % totalSlides;
-                updateSlide(currentIndex);
-            }
-
-            function prevSlide() {
-                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-                updateSlide(currentIndex);
-            }
-
-            function startAutoSlide() {
-                autoSlideInterval = setInterval(nextSlide, 5000); // Auto-slide lebih lama & smooth
-            }
-
-            function stopAutoSlide() {
-                clearInterval(autoSlideInterval);
-            }
-
-            // **Event Listeners**
-            document.getElementById("nextBtn").addEventListener("click", function() {
-                stopAutoSlide();
-                nextSlide();
-                startAutoSlide();
+            var swiper = new Swiper(".mySwiper", {
+                slidesPerView: 1,
+                loop: true,
+                grabCursor: true,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".custom-next",
+                    prevEl: ".custom-prev",
+                },
+                autoplay: {
+                    delay: 7000,
+                    disableOnInteraction: false,
+                },
             });
-
-            document.getElementById("prevBtn").addEventListener("click", function() {
-                stopAutoSlide();
-                prevSlide();
-                startAutoSlide();
-            });
-
-            indicators.forEach(indicator => {
-                indicator.addEventListener("click", function() {
-                    stopAutoSlide();
-                    currentIndex = parseInt(this.getAttribute("data-index"));
-                    updateSlide(currentIndex);
-                    startAutoSlide();
-                });
-            });
-
-            // **Swipe Gesture (HP & Mouse Drag)**
-            carousel.addEventListener("touchstart", function(e) {
-                startX = e.touches[0].clientX;
-                isDragging = true;
-            });
-
-            carousel.addEventListener("touchmove", function(e) {
-                if (!isDragging) return;
-                let moveX = e.touches[0].clientX - startX;
-                if (Math.abs(moveX) > 50) {
-                    stopAutoSlide();
-                    if (moveX > 0) {
-                        prevSlide();
-                    } else {
-                        nextSlide();
-                    }
-                    startAutoSlide();
-                    isDragging = false;
-                }
-            });
-
-            carousel.addEventListener("touchend", function() {
-                isDragging = false;
-            });
-
-            // **Mouse Drag (Desktop)**
-            carousel.addEventListener("mousedown", function(e) {
-                startX = e.clientX;
-                isDragging = true;
-            });
-
-            carousel.addEventListener("mousemove", function(e) {
-                if (!isDragging) return;
-                let moveX = e.clientX - startX;
-                if (Math.abs(moveX) > 50) {
-                    stopAutoSlide();
-                    if (moveX > 0) {
-                        prevSlide();
-                    } else {
-                        nextSlide();
-                    }
-                    startAutoSlide();
-                    isDragging = false;
-                }
-            });
-
-            carousel.addEventListener("mouseup", function() {
-                isDragging = false;
-            });
-
-            // **Mulai Auto Slide**
-            startAutoSlide();
         });
-
         document.addEventListener("DOMContentLoaded", function() {
             let scrollButton = document.getElementById("scroll-buttons");
             let buttonContainer = scrollButton.parentElement;

@@ -14,25 +14,30 @@ use Illuminate\Support\Facades\Route;
 */
 
 // ==== Contact Mail ====
+Route::get('/carousel', function () {
+    return view('carousel.index');
+})->name('carousel');
 
-Route::prefix('peminjamanlab')->group(function () {
-    Route::get('/', function () {
-        return view('peminjamanlab.index');
-    })->name('peminjamanlab');
+Route::middleware('registration.time')->group(function () {
+    Route::prefix('peminjamanlab')->group(function () {
+        Route::get('/', function () {
+            return view('peminjamanlab.index');
+        })->name('peminjamanlab');
 
-    Route::get('/create', function () {
-        return view('peminjamanlab.create');
-    })->name('peminjamanlab.create');
-});
+        Route::get('/create', function () {
+            return view('peminjamanlab.create');
+        })->name('peminjamanlab.create');
+    });
 
-Route::prefix('peminjamanalat')->group(function () {
-    Route::get('/', function () {
-        return view('peminjamanalat.index');
-    })->name('peminjamanalat');
+    Route::prefix('peminjamanalat')->group(function () {
+        Route::get('/', function () {
+            return view('peminjamanalat.index');
+        })->name('peminjamanalat');
 
-    Route::get('/create', function () {
-        return view('peminjamanalat.create');
-    })->name('peminjamanalat.create');
+        Route::get('/create', function () {
+            return view('peminjamanalat.create');
+        })->name('peminjamanalat.create');
+    });
 });
 
 Route::get('/', function () {
