@@ -15,16 +15,11 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 
-<body>
+<body class="min-h-screen flex flex-col">
   <!-- partial:partials/_navbar.html -->
   @include('partials.navbar')
   <!-- partial:partials/_footer.html -->
   @include('partials.footer')
-
-
-
-
-
   <script>
     AOS.init({
       once: false, // Animasi hanya berjalan sekali
