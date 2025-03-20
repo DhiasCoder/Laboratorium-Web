@@ -444,11 +444,14 @@
 
                 document.getElementById('booking-modal').classList.remove('hidden');
                 document.getElementById('booking-modal').classList.add('flex');
+                document.getElementById('booking-modal').classList.add('pointer-events-auto'); // Hanya modal yang bisa diklik
+                document.body.classList.add('overflow-hidden', 'pointer-events-none'); // Mencegah scroll & klik elemen lain
             }
 
             function closeModal() {
                 document.getElementById('booking-modal').classList.add('hidden');
                 document.getElementById('booking-modal').classList.remove('flex');
+                document.body.classList.remove('overflow-hidden', 'pointer-events-none'); // Kembalikan interaksi halaman
             }
 
             function formatDate(dateString) {
