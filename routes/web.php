@@ -14,9 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 // ==== Contact Mail ====
-Route::get('/carousel', function () {
-    return view('carousel.index');
-})->name('carousel');
+Route::get('/jadwal', function () {
+    return view('jadwal.index');
+})->name('jadwal');
 
 Route::middleware('registration.time')->group(function () {
     Route::prefix('peminjamanlab')->group(function () {

@@ -5,94 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laboratorium Raden Fatah</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    @extends('layouts.main')
+    @section('title', '')
 </head>
 
 <body class="bg-gradient-to-r from-blue-600 to-sky-300 text-white">
-    <!-- Navbar -->
-    <nav id="navbar" class="fixed top-0 left-0 w-full bg-white shadow-md z-50 transition-all duration-300 ease-out flex items-center justify-between px-4 sm:px-6 py-3"
-        data-aos="fade-down" data-aos-delay="300">
-
-        <!-- Logo -->
-        <div class="flex items-center gap-x-2 sm:gap-x-3">
-            <a href="{{ route('home') }}" class="flex items-center">
-                <img src="{{asset('assets/images/logouin.png')}}" alt="Logo" class="h-8 sm:h-10 w-auto">
-                <span class="text-base sm:text-xl font-bold text-gray-800">LABORATORIUM</span>
-            </a>
-        </div>
-
-        <!-- Mobile Menu Button -->
-        <button id="mobile-menu-button" class="block md:hidden text-gray-800">
-            <span class="material-icons">menu</span>
-        </button>
-
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex items-center gap-x-4 lg:gap-x-6">
-            <!-- Dropdown Home -->
-            <div class="relative group">
-                <button class="text-gray-800 font-semibold flex items-center gap-x-1 hover:text-gray-600"><a href="{{ route('home') }}">Home</a></button>
-            </div>
-
-            <!-- Dropdown Tentang -->
-            <div class="relative group">
-                <button class="text-gray-800 font-semibold flex items-center gap-x-1 hover:text-gray-600">
-                    Tentang Kami <span class="material-icons">arrow_drop_down</span>
-                </button>
-                <div class="absolute hidden bg-white shadow-md rounded-md border border-indigo-300 group-hover:block w-52">
-                    <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Layanan 1</a>
-                    <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Layanan 2</a>
-                </div>
-            </div>
-
-            <!-- Dropdown Fasilitas -->
-            <div class="relative group">
-                <button class="text-gray-800 font-semibold flex items-center gap-x-1 hover:text-gray-600">
-                    Fasilitas <span class="material-icons">arrow_drop_down</span>
-                </button>
-                <div class="absolute hidden bg-white shadow-md rounded-md border border-indigo-300 group-hover:block w-52">
-                    <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Layanan 1</a>
-                    <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Layanan 2</a>
-                </div>
-            </div>
-
-            <!-- Dropdown Layanan -->
-            <div class="relative group">
-                <button class="text-gray-800 font-semibold flex items-center gap-x-1 hover:text-gray-600">
-                    Layanan <span class="material-icons">arrow_drop_down</span>
-                </button>
-                <div class="absolute hidden bg-white shadow-md rounded-md border border-indigo-300 group-hover:block w-52">
-                    <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Layanan 1</a>
-                    <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Layanan 2</a>
-                </div>
-            </div>
-
-            <!-- Dropdown Jadwal -->
-            <div class="relative group">
-                <button class="text-gray-800 font-semibold flex items-center gap-x-1 hover:text-gray-600">Jadwal</button>
-            </div>
-
-            <!-- Dropdown Contact -->
-            <div class="relative group">
-                <button id="button-contact" class="text-gray-800 font-semibold flex items-center gap-x-1 hover:text-gray-600">Contact</button>
-            </div>
-
-            <!-- Tombol Login (Desktop) -->
-            <div>
-                <a href="{{ route('login') }}" class="bg-gray-800 text-white px-4 py-2 rounded-full shadow 
-            transition-all duration-300 ease-out
-            hover:bg-gray-700 hover:text-white hover:shadow-xl hover:-translate-y-1 hover:scale-105">
-                    Masuk
-                </a>
-            </div>
-        </div>
-    </nav>
-
     <!-- Tombol Panah ke Bawah -->
     <div class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-10">
         <button id="scroll-buttons" class="animate-bounce bg-white bg-opacity-80 rounded-full shadow-lg transition hover:bg-opacity-100 hover:scale-110 w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
@@ -100,72 +17,6 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
             </svg>
         </button>
-    </div>
-
-    <!-- Mobile Menu (Terpisah dari navbar untuk menghindari masalah dengan fixed position) -->
-    <div id="mobile-menu" class="fixed inset-0 bg-white z-50 hidden flex-col pt-16 pb-6 px-4 w-full h-full overflow-y-auto md:hidden">
-        <button id="close-menu-button" class="absolute top-4 right-4 text-gray-800">
-            <span class="material-icons">close</span>
-        </button>
-
-        <!-- Mobile Menu Items -->
-        <div class="space-y-4 mt-6">
-            <!-- Home -->
-            <div class="border-b border-gray-200 pb-2">
-                <button class="mobile-dropdown-toggle w-full text-left flex items-center justify-between text-gray-800 font-semibold"><a href="{{ route('home') }}">Home</a></button>
-            </div>
-
-            <!-- Tentang Kami -->
-            <div class="border-b border-gray-200 pb-2">
-                <button class="mobile-dropdown-toggle w-full text-left flex items-center justify-between text-gray-800 font-semibold">
-                    Tentang Kami <span class="material-icons transition-transform duration-200">arrow_drop_down</span>
-                </button>
-                <div class="mobile-dropdown-content hidden pl-4 mt-2 space-y-2">
-                    <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Layanan 1</a>
-                    <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Layanan 2</a>
-                </div>
-            </div>
-
-            <!-- Fasilitas -->
-            <div class="border-b border-gray-200 pb-2">
-                <button class="mobile-dropdown-toggle w-full text-left flex items-center justify-between text-gray-800 font-semibold">
-                    Fasilitas <span class="material-icons transition-transform duration-200">arrow_drop_down</span>
-                </button>
-                <div class="mobile-dropdown-content hidden pl-4 mt-2 space-y-2">
-                    <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Layanan 1</a>
-                    <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Layanan 2</a>
-                </div>
-            </div>
-
-            <!-- Layanan -->
-            <div class="border-b border-gray-200 pb-2">
-                <button class="mobile-dropdown-toggle w-full text-left flex items-center justify-between text-gray-800 font-semibold">
-                    Layanan <span class="material-icons transition-transform duration-200">arrow_drop_down</span>
-                </button>
-                <div class="mobile-dropdown-content hidden pl-4 mt-2 space-y-2">
-                    <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Layanan 1</a>
-                    <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Layanan 2</a>
-                </div>
-            </div>
-
-            <!-- Jadwal -->
-            <div class="border-b border-gray-200 pb-2">
-                <button class="mobile-dropdown-toggle w-full text-left flex items-center justify-between text-gray-800 font-semibold">Jadwal</button>
-            </div>
-
-            <!-- Contact -->
-            <div class="border-b border-gray-200 pb-2">
-                <button id="button-contact" class="mobile-dropdown-toggle w-full text-left flex items-center justify-between text-gray-800 font-semibold">Contact</button>
-            </div>
-
-            <!-- Tombol Login (Mobile) -->
-            <div class="mt-4">
-                <a href="{{ route('login') }}" class="block w-full bg-gray-800 text-white px-4 py-3 text-center rounded-full shadow 
-            transition-all duration-300 ease-out hover:bg-gray-700">
-                    Masuk
-                </a>
-            </div>
-        </div>
     </div>
 
     <div class="relative min-h-screen flex items-center justify-center px-4 pt-24 overflow-hidden">
@@ -571,31 +422,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer id="fotter-section" class="bg-gray-900 text-white py-8 px-4 mt-auto w-full">
-        <div class="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 text-center md:text-left">
-            <div>
-                <h3 class="text-lg font-semibold">Laboratorium Terpadu</h3>
-                <p class="text-gray-400">Menyediakan fasilitas laboratorium modern dan lengkap untuk kegiatan praktikum, penelitian, dan pengembangan.</p>
-            </div>
-            <div>
-                <h3 class="text-lg font-semibold">Kontak Kami</h3>
-                <p class="text-gray-400">Jl. Pangeran Ratu, 5 Ulu, Kecamatan Seberang Ulu I, Kota Palembang, Sumatera Selatan 30267</p>
-                <p class="text-gray-400">(021) 1234-5678</p>
-                <p class="text-gray-400">labter@uinrafa.ac.id</p>
-            </div>
-            <div>
-                <h3 class="text-lg font-semibold">Jam Operasional</h3>
-                <p class="text-gray-400">Senin - Kamis: 07.30 - 04.00</p>
-                <p class="text-gray-400">Jumat: 07.30 - 04.30</p>
-                <p class="text-gray-400">Sabtu-Minggu & Hari Libur: Tutup</p>
-            </div>
-        </div>
-        <div class="text-center text-gray-500 mt-6">
-            © 2025 Laboratorium Terpadu. Hak Cipta Dilindungi.
-        </div>
-    </footer>
-
     <script>
         function openModal() {
             document.getElementById('modal').classList.remove('hidden');
@@ -607,9 +433,6 @@
             document.getElementById('modal').classList.add('hidden');
             document.body.classList.remove('overflow-hidden', 'pointer-events-none'); // Kembalikan interaksi halaman
         }
-        AOS.init({
-            once: false, // Animasi hanya berjalan sekali
-        });
         document.addEventListener("DOMContentLoaded", function() {
             var swiper = new Swiper(".mySwiper", {
                 slidesPerView: 1,
@@ -702,16 +525,6 @@
         document.addEventListener("DOMContentLoaded", function() {
             document.getElementById("scroll-button").addEventListener("click", function() {
                 let targetSection = document.getElementById("next-section");
-                let offset = 50; // Ubah nilai ini untuk mengatur jarak dari atas (misal: navbar tinggi 50px)
-                let targetPosition = targetSection.offsetTop - offset;
-
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: "smooth"
-                });
-            });
-            document.getElementById("button-contact").addEventListener("click", function() {
-                let targetSection = document.getElementById("fotter-section");
                 let offset = 50; // Ubah nilai ini untuk mengatur jarak dari atas (misal: navbar tinggi 50px)
                 let targetPosition = targetSection.offsetTop - offset;
 
