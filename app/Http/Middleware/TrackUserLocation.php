@@ -11,7 +11,13 @@ class TrackUserLocation
 {
     public function handle(Request $request, Closure $next)
     {
-        $ip = $request->ip();
+        $ip = $request->header('X-Forwarded-For') ?? $request->ip(); // Cek apakah ada IP dari proxy
+
+        if ($ip === '127.0.0.1' || $ip === '::1') {
+            $ip = '8.8.8.8'; // IP Google DNS untuk testing
+        }
+
+        // Cek apakah IP sudah tercatat hari ini
         $existingLog = UserAccessLog::where('ip_address', $ip)
             ->whereDate('created_at', today())
             ->first();
