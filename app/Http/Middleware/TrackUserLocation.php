@@ -11,24 +11,23 @@ class TrackUserLocation
 {
     public function handle(Request $request, Closure $next)
     {
-        $ip = $request->header('X-Forwarded-For') ?? $request->ip(); // Cek apakah ada IP dari proxy
+        $ip = $request->ip();
 
-        if ($ip === '127.0.0.1' || $ip === '::1') {
-            $ip = '8.8.8.8'; // IP Google DNS untuk testing
+        // Cek apakah IP sudah ada di database untuk menghindari duplikasi
+        if (!UserAccessLog::where('ip_address', $ip)->exists()) {
+            $response = Http::get("http://ip-api.com/json/{$ip}");
+            $locationData = $response->json();
+
+            UserAccessLog::create([
+                'ip_address' => $ip,
+                'country' => $locationData['country'] ?? 'Unknown',
+                'region' => $locationData['regionName'] ?? 'Unknown',
+                'city' => $locationData['city'] ?? 'Unknown',
+                'latitude' => $locationData['lat'] ?? null,
+                'longitude' => $locationData['lon'] ?? null,
+                'isp' => $locationData['isp'] ?? 'Unknown',
+            ]);
         }
-
-        $response = Http::get("http://ip-api.com/json/{$ip}");
-        $locationData = $response->json();
-
-        UserAccessLog::create([
-            'ip_address' => $ip,
-            'country' => $locationData['country'] ?? 'Unknown',
-            'region' => $locationData['regionName'] ?? 'Unknown',
-            'city' => $locationData['city'] ?? 'Unknown',
-            'latitude' => $locationData['lat'] ?? null,
-            'longitude' => $locationData['lon'] ?? null,
-            'isp' => $locationData['isp'] ?? 'Unknown',
-        ]);
 
         return $next($request);
     }
