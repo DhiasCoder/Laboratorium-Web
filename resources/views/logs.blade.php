@@ -12,7 +12,6 @@
             const searchInput = document.getElementById('searchInput');
             const countryFilter = document.getElementById('countryFilter');
             const rows = document.querySelectorAll('.log-row');
-            const paginationButtons = document.querySelectorAll('.pagination-btn');
             const itemsPerPage = 10;
             let currentPage = 1;
 
@@ -24,11 +23,23 @@
                 rows.forEach(row => {
                     const ip = row.querySelector('.ip-address').textContent.toLowerCase();
                     const country = row.querySelector('.country').textContent.toLowerCase();
+                    const region = row.querySelector('.region').textContent.toLowerCase();
+                    const city = row.querySelector('.city').textContent.toLowerCase();
+                    const isp = row.querySelector('.isp').textContent.toLowerCase();
 
-                    if ((ip.includes(searchText) || searchText === '') && (country.includes(selectedCountry) || selectedCountry === '')) {
+                    // Pencarian berlaku ke semua kolom
+                    if (
+                        (ip.includes(searchText) ||
+                            country.includes(searchText) ||
+                            region.includes(searchText) ||
+                            city.includes(searchText) ||
+                            isp.includes(searchText) || searchText === '') &&
+                        (country.includes(selectedCountry) || selectedCountry === '')
+                    ) {
                         filteredRows.push(row);
                     }
                 });
+
                 updatePagination(filteredRows);
             }
 
@@ -40,6 +51,7 @@
                 filteredRows.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage).forEach(row => {
                     row.style.display = '';
                 });
+
                 renderPagination(totalPages);
             }
 

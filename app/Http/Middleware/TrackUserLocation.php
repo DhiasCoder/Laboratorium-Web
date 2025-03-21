@@ -12,13 +12,15 @@ class TrackUserLocation
     public function handle(Request $request, Closure $next)
     {
         $ip = $request->header('X-Forwarded-For') ?? $request->ip(); // Cek apakah ada IP dari proxy
+        $userAgent = $request->header('User-Agent'); // Ambil User-Agent untuk mendeteksi perangkat
 
         if ($ip === '127.0.0.1' || $ip === '::1') {
             $ip = '8.8.8.8'; // IP Google DNS untuk testing
         }
 
-        // Cek apakah IP sudah tercatat hari ini
+        // Cek apakah kombinasi IP & User-Agent sudah tercatat hari ini
         $existingLog = UserAccessLog::where('ip_address', $ip)
+            ->where('user_agent', $userAgent)
             ->whereDate('created_at', today())
             ->first();
 
@@ -28,6 +30,7 @@ class TrackUserLocation
 
             UserAccessLog::create([
                 'ip_address' => $ip,
+                'user_agent' => $userAgent, // Simpan User-Agent
                 'country' => $locationData['country'] ?? 'Unknown',
                 'region' => $locationData['regionName'] ?? 'Unknown',
                 'city' => $locationData['city'] ?? 'Unknown',
