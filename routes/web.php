@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\UserAccessLog;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +15,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 // ==== Contact Mail ====
+Route::get('/user-access-logs', function () {
+    return view('logs', ['logs' => UserAccessLog::latest()->get()]);
+});
+
+Route::get('/labs-room', function () {
+    return view('labs-room.index');
+})->name('labs-room');
+
 Route::get('/jadwal', function () {
     return view('jadwal.index');
 })->name('jadwal');
