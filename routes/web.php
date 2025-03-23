@@ -2,6 +2,8 @@
 
 use App\Models\UserAccessLog;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +17,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 // ==== Contact Mail ====
+// Middleware Auth
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', function () {
+        if (auth()->user()->role == 'admin') {
+            return view('dashboard.index'); // View dashboard jika admin
+        }
+        return redirect('/'); // Redirect ke welcome jika bukan admin
+    })->name('dashboard');
+});
+////////////////////////
+
 Route::get('/user-access-logs', function () {
     return view('logs', ['logs' => UserAccessLog::latest()->get()]);
 });
@@ -49,6 +62,7 @@ Route::middleware('registration.time')->group(function () {
     });
 });
 
+// Home View
 Route::get('/', function () {
     return view('welcome');
 });
@@ -56,42 +70,31 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('welcome');
 })->name('home');
+////////////////////////
 
-Route::get('/dashboard', function () {
-    return view('dashboard.index');
-})->name('dashboard');
-
-Route::get('/forms', function () {
-    return view('pages.forms.index');
-});
-
-Route::get('/buttons', function () {
-    return view('pages.ui-features.buttons.index');
-});
-
-Route::get('/dropdowns', function () {
-    return view('pages.ui-features.dropdowns.index');
-});
-
-Route::get('/typography', function () {
-    return view('pages.ui-features.typography.index');
-});
-
-Route::get('/chart', function () {
-    return view('pages.chart.index');
-});
-
-Route::get('/table', function () {
-    return view('pages.table.index');
-});
-
-Route::get('/icons', function () {
-    return view('pages.icons.index');
-});
-
+// Login View
 Route::get('/login', function () {
     return view('pages.user-pages.login.index');
 })->name('login');
+
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+////////////////////////
+
+Route::post('/logout', function () {
+    Auth::logout(); // Logout user
+    request()->session()->invalidate(); // Hapus semua session
+    request()->session()->regenerateToken(); // Regenerasi CSRF token
+
+    return redirect('/login'); // Redirect ke halaman login
+})->name('logout');
+
+Route::post('/logouts', function () {
+    Auth::logout(); // Logout user
+    request()->session()->invalidate(); // Hapus semua session
+    request()->session()->regenerateToken(); // Regenerasi CSRF token
+
+    return redirect('/'); // Redirect ke halaman login
+})->name('logouts');
 
 Route::get('/register', function () {
     return view('pages.user-pages.register.index');

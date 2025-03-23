@@ -7,6 +7,7 @@
   <title>Login - Laboratorium Terpadu</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -66,11 +67,12 @@
       <h3 class="text-xl font-semibold text-gray-800 mb-2">Selamat Datang Kembali!</h3>
       <p class="text-gray-500 mb-6">Silakan masuk untuk mengakses akun Anda</p>
 
-      <form>
+      <form method="POST" action="{{ route('login') }}">
+        @csrf
         <div class="mb-5">
           <label class="block text-gray-700 font-medium mb-2">Email</label>
           <div class="relative">
-            <input type="email"
+            <input type="email" name="email" value="{{ old('email') }}"
               class="w-full px-4 py-3 border border-gray-300 rounded-lg input-focus transition duration-200 pl-10"
               placeholder="Masukkan email Anda">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 absolute left-3 top-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -82,7 +84,7 @@
         <div class="mb-6">
           <label class="block text-gray-700 font-medium mb-2">Password</label>
           <div class="relative">
-            <input type="password"
+            <input type="password" name="password" value="{{ old('password') }}"
               class="w-full px-4 py-3 border border-gray-300 rounded-lg input-focus transition duration-200 pl-10"
               placeholder="Masukkan password Anda">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 absolute left-3 top-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -101,7 +103,8 @@
         </div>
 
         <button class="w-full btn-gradient text-white py-3 rounded-lg font-bold hover:opacity-95 transition-all">
-          Masuk
+          <i class="fas fa-sign-in-alt w-5"></i>
+          <span class="ml-2">Masuk</span>
         </button>
       </form>
 

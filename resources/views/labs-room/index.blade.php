@@ -19,7 +19,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Lab categories -->
             <div x-data="{ 
-                open: true, 
+                open: window.innerWidth < 768 ? false : true, // Hanya toggle di HP
                 labName: 'Biologi',
                 rooms: [
                     { id: 1, name: 'Lab Biologi 1', isActive: true, startTime: '08:00', endTime: '10:30', user: 'Dr. Siti Aminah', activity: 'Praktikum Anatomi' },
@@ -33,13 +33,13 @@
                     { id: 9, name: 'Lab Biologi 9', isActive: false, startTime: '', endTime: '', user: '', activity: '' }
                 ]
             }" class="bg-white rounded-lg shadow-md overflow-hidden">
-                <div @click="open = !open" class="bg-blue-600 text-white p-4 cursor-pointer flex justify-between items-center">
+                <div @click="window.innerWidth < 768 ? open = !open : null" class="bg-blue-600 text-white p-4 cursor-pointer md:cursor-default flex justify-between items-center">
                     <h2 class="text-lg font-semibold">Laboratorium Biologi (9)</h2>
                     <svg :class="{'rotate-180': open}" class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </div>
-                <div x-show="open" class="p-4">
+                <div x-show="open || window.innerWidth >= 768" class="p-4">
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
                         <template x-for="room in rooms" :key="room.id">
                             <div @click="$dispatch('open-modal', room)"
@@ -56,19 +56,19 @@
 
             <!-- Fisika Lab -->
             <div x-data="{ 
-                open: true, 
+                open: window.innerWidth < 768 ? false : true, // Hanya toggle di HP 
                 labName: 'Fisika',
                 rooms: [
                     { id: 1, name: 'Lab Fisika 1', isActive: true, startTime: '07:30', endTime: '10:00', user: 'Prof. Ahmad Dahlan', activity: 'Praktikum Mekanika' }
                 ]
             }" class="bg-white rounded-lg shadow-md overflow-hidden">
-                <div @click="open = !open" class="bg-purple-600 text-white p-4 cursor-pointer flex justify-between items-center">
+                <div @click="window.innerWidth < 768 ? open = !open : null" class="bg-purple-600 text-white p-4 cursor-pointer md:cursor-default flex justify-between items-center">
                     <h2 class="text-lg font-semibold">Laboratorium Fisika (1)</h2>
                     <svg :class="{'rotate-180': open}" class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </div>
-                <div x-show="open" class="p-4">
+                <div x-show="open || window.innerWidth >= 768" class="p-4">
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
                         <template x-for="room in rooms" :key="room.id">
                             <div @click="$dispatch('open-modal', room)"
@@ -85,7 +85,7 @@
 
             <!-- Kimia Lab -->
             <div x-data="{ 
-                open: true, 
+                open: window.innerWidth < 768 ? false : true, // Hanya toggle di HP 
                 labName: 'Kimia',
                 rooms: [
                     { id: 1, name: 'Lab Kimia 1', isActive: false, startTime: '', endTime: '', user: '', activity: '' },
@@ -96,13 +96,13 @@
                     { id: 6, name: 'Lab Kimia 6', isActive: false, startTime: '', endTime: '', user: '', activity: '' }
                 ]
             }" class="bg-white rounded-lg shadow-md overflow-hidden">
-                <div @click="open = !open" class="bg-red-600 text-white p-4 cursor-pointer flex justify-between items-center">
+                <div @click="window.innerWidth < 768 ? open = !open : null" class="bg-red-600 text-white p-4 cursor-pointer md:cursor-default flex justify-between items-center">
                     <h2 class="text-lg font-semibold">Laboratorium Kimia (6)</h2>
                     <svg :class="{'rotate-180': open}" class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </div>
-                <div x-show="open" class="p-4">
+                <div x-show="open || window.innerWidth >= 768" class="p-4">
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
                         <template x-for="room in rooms" :key="room.id">
                             <div @click="$dispatch('open-modal', room)"
@@ -119,7 +119,7 @@
 
             <!-- Sistem Informasi Lab -->
             <div x-data="{ 
-                open: true, 
+                open: window.innerWidth < 768 ? false : true, // Hanya toggle di HP 
                 labName: 'Sistem Informasi',
                 rooms: [
                     { id: 1, name: 'Lab SI 1', isActive: true, startTime: '08:30', endTime: '11:00', user: 'Dr. Eko Prasetyo', activity: 'Praktikum Database' },
@@ -130,13 +130,13 @@
                     { id: 6, name: 'Lab SI 6', isActive: false, startTime: '', endTime: '', user: '', activity: '' }
                 ]
             }" class="bg-white rounded-lg shadow-md overflow-hidden">
-                <div @click="open = !open" class="bg-teal-600 text-white p-4 cursor-pointer flex justify-between items-center">
+                <div @click="window.innerWidth < 768 ? open = !open : null" class="bg-teal-600 text-white p-4 cursor-pointer md:cursor-default flex justify-between items-center">
                     <h2 class="text-lg font-semibold">Laboratorium Sistem Informasi (6)</h2>
                     <svg :class="{'rotate-180': open}" class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </div>
-                <div x-show="open" class="p-4">
+                <div x-show="open || window.innerWidth >= 768" class="p-4">
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
                         <template x-for="room in rooms" :key="room.id">
                             <div @click="$dispatch('open-modal', room)"
@@ -153,19 +153,19 @@
 
             <!-- UTM Lab -->
             <div x-data="{ 
-                open: true, 
+                open: window.innerWidth < 768 ? false : true, // Hanya toggle di HP 
                 labName: 'UTM',
                 rooms: [
                     { id: 1, name: 'Lab UTM', isActive: false, startTime: '', endTime: '', user: '', activity: '' }
                 ]
             }" class="bg-white rounded-lg shadow-md overflow-hidden">
-                <div @click="open = !open" class="bg-yellow-600 text-white p-4 cursor-pointer flex justify-between items-center">
+                <div @click="window.innerWidth < 768 ? open = !open : null" class="bg-yellow-600 text-white p-4 cursor-pointer md:cursor-default flex justify-between items-center">
                     <h2 class="text-lg font-semibold">Laboratorium UTM (1)</h2>
                     <svg :class="{'rotate-180': open}" class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </div>
-                <div x-show="open" class="p-4">
+                <div x-show="open || window.innerWidth >= 768" class="p-4">
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
                         <template x-for="room in rooms" :key="room.id">
                             <div @click="$dispatch('open-modal', room)"
@@ -182,19 +182,19 @@
 
             <!-- Bahasa Lab -->
             <div x-data="{ 
-                open: true, 
+                open: window.innerWidth < 768 ? false : true, // Hanya toggle di HP 
                 labName: 'Bahasa',
                 rooms: [
                     { id: 1, name: 'Lab Bahasa', isActive: true, startTime: '12:30', endTime: '14:30', user: 'Prof. Maria Susanti', activity: 'Kelas Bahasa Inggris' }
                 ]
             }" class="bg-white rounded-lg shadow-md overflow-hidden">
-                <div @click="open = !open" class="bg-indigo-600 text-white p-4 cursor-pointer flex justify-between items-center">
+                <div @click="window.innerWidth < 768 ? open = !open : null" class="bg-indigo-600 text-white p-4 cursor-pointer md:cursor-default flex justify-between items-center">
                     <h2 class="text-lg font-semibold">Laboratorium Bahasa (1)</h2>
                     <svg :class="{'rotate-180': open}" class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </div>
-                <div x-show="open" class="p-4">
+                <div x-show="open || window.innerWidth >= 768" class="p-4">
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
                         <template x-for="room in rooms" :key="room.id">
                             <div @click="$dispatch('open-modal', room)"
@@ -211,19 +211,19 @@
 
             <!-- Matematika Lab -->
             <div x-data="{ 
-                open: true, 
+                open: window.innerWidth < 768 ? false : true, // Hanya toggle di HP 
                 labName: 'Matematika',
                 rooms: [
                     { id: 1, name: 'Lab Matematika', isActive: false, startTime: '', endTime: '', user: '', activity: '' }
                 ]
             }" class="bg-white rounded-lg shadow-md overflow-hidden">
-                <div @click="open = !open" class="bg-pink-600 text-white p-4 cursor-pointer flex justify-between items-center">
+                <div @click="window.innerWidth < 768 ? open = !open : null" class="bg-pink-600 text-white p-4 cursor-pointer md:cursor-default flex justify-between items-center">
                     <h2 class="text-lg font-semibold">Laboratorium Matematika (1)</h2>
                     <svg :class="{'rotate-180': open}" class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </div>
-                <div x-show="open" class="p-4">
+                <div x-show="open || window.innerWidth >= 768" class="p-4">
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
                         <template x-for="room in rooms" :key="room.id">
                             <div @click="$dispatch('open-modal', room)"
@@ -240,19 +240,19 @@
 
             <!-- Ekonomi Lab -->
             <div x-data="{ 
-                open: true, 
+                open: window.innerWidth < 768 ? false : true, // Hanya toggle di HP 
                 labName: 'Ekonomi',
                 rooms: [
                     { id: 1, name: 'Lab Ekonomi', isActive: true, startTime: '10:30', endTime: '13:00', user: 'Dr. Anita Wijaya', activity: 'Praktikum Ekonometrika' }
                 ]
             }" class="bg-white rounded-lg shadow-md overflow-hidden">
-                <div @click="open = !open" class="bg-green-600 text-white p-4 cursor-pointer flex justify-between items-center">
+                <div @click="window.innerWidth < 768 ? open = !open : null" class="bg-green-600 text-white p-4 cursor-pointer md:cursor-default flex justify-between items-center">
                     <h2 class="text-lg font-semibold">Laboratorium Ekonomi (1)</h2>
                     <svg :class="{'rotate-180': open}" class="w-5 h-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                     </svg>
                 </div>
-                <div x-show="open" class="p-4">
+                <div x-show="open || window.innerWidth >= 768" class="p-4">
                     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
                         <template x-for="room in rooms" :key="room.id">
                             <div @click="$dispatch('open-modal', room)"
@@ -342,6 +342,11 @@
 
                     <!-- Footer -->
                     <div class="bg-gray-50 px-4 py-3 rounded-b-lg text-right">
+                        <template x-if="!currentRoom?.isActive">
+                            <button @click="showModal = false" class="px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors mr-2">
+                                Gunakan
+                            </button>
+                        </template>
                         <button @click="showModal = false" class="px-4 py-2 bg-gray-200 text-gray-800 rounded-lg hover:bg-gray-300 transition-colors">
                             Tutup
                         </button>

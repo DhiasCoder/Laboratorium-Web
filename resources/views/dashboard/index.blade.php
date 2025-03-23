@@ -73,10 +73,13 @@
       </nav>
 
       <div class="mt-auto pt-8">
-        <a href="#" class="flex items-center p-3 rounded-lg hover:bg-indigo-800 transition-colors">
-          <i class="fas fa-sign-out-alt w-5"></i>
-          <span class="ml-2">Logout</span>
-        </a>
+        <form method="POST" action="{{ route('logout') }}">
+          @csrf
+          <button type="submit" class="flex items-center p-3 rounded-lg hover:bg-indigo-800 transition-colors">
+            <i class="fas fa-sign-out-alt w-5"></i>
+            <span class="ml-2">Logout</span>
+          </button>
+        </form>
       </div>
     </aside>
 
@@ -108,7 +111,7 @@
             <div class="flex items-center">
               <img src="/api/placeholder/40/40" alt="Admin" class="w-8 h-8 rounded-full mr-2">
               <div class="hidden sm:block">
-                <h3 class="text-sm font-medium">Admin User</h3>
+                <h3 class="text-sm font-medium">{{ Auth::user()->name }}</h3>
                 <p class="text-xs text-gray-500">Super Admin</p>
               </div>
             </div>

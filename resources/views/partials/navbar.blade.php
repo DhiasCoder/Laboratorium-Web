@@ -66,13 +66,29 @@
     </div>
 
     <!-- Tombol Login (Desktop) -->
+    @auth
+    <div>
+      <form method="POST" action="{{ route('logouts') }}">
+        @csrf
+        <button type="submit" class="bg-gray-800 text-white px-4 py-2 rounded-full shadow 
+              transition-all duration-300 ease-out
+              hover:bg-gray-700 hover:text-white hover:shadow-xl hover:-translate-y-1 hover:scale-105">
+          <i class="fas fa-sign-out-alt w-5"></i>
+          <span class="ml-2">Logout</span>
+        </button>
+      </form>
+    </div>
+    @endauth
+    @guest
     <div>
       <a href="{{ route('login') }}" class="bg-gray-800 text-white px-4 py-2 rounded-full shadow 
             transition-all duration-300 ease-out
             hover:bg-gray-700 hover:text-white hover:shadow-xl hover:-translate-y-1 hover:scale-105">
-        Masuk
+        <i class="fas fa-sign-in-alt w-5"></i>
+        <span class="ml-2">Masuk</span>
       </a>
     </div>
+    @endguest
   </div>
 </nav>
 
