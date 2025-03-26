@@ -146,12 +146,32 @@
       <button id="button-contact" class="mobile-dropdown-toggle w-full text-left flex items-center justify-between text-gray-800 font-semibold">Contact</button>
     </div>
 
-    <!-- Tombol Login (Mobile) -->
-    <div class="mt-4">
-      <a href="{{ route('login') }}" class="block w-full bg-gray-800 text-white px-4 py-3 text-center rounded-full shadow 
-            transition-all duration-300 ease-out hover:bg-gray-700">
-        Masuk
+    <!-- Tombol Login/Logout (Responsif) -->
+    <div class="flex justify-center items-center p-4">
+      @auth
+      <form method="POST" action="{{ route('logouts') }}" class="w-full">
+        @csrf
+        <button type="submit"
+          class="w-full bg-gray-800 text-white px-4 py-2 rounded-full shadow 
+                  transition-all duration-300 ease-out
+                  hover:bg-gray-700 hover:text-white hover:shadow-xl 
+                  hover:-translate-y-1 hover:scale-105 
+                  sm:text-base text-sm">
+          <span class="ml-2">Logout</span>
+        </button>
+      </form>
+      @endauth
+
+      @guest
+      <a href="{{ route('login') }}"
+        class="w-full bg-gray-800 text-white px-4 py-2 rounded-full shadow 
+                transition-all duration-300 ease-out
+                hover:bg-gray-700 hover:text-white hover:shadow-xl 
+                hover:-translate-y-1 hover:scale-105 
+                sm:text-base text-sm text-center">
+        <span class="ml-2">Masuk</span>
       </a>
+      @endguest
     </div>
   </div>
 </div>
