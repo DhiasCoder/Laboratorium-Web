@@ -19,6 +19,13 @@
 <body class="min-h-screen flex flex-col">
   <!-- partial:partials/_navbar.html -->
   @include('partials.navbar')
+  <div id="toast-root"
+    data-success="{{ session('success') }}"
+    data-error="{{ session('error') }}"
+    data-info="{{ session('info') }}">
+  </div>
+  @vite(['resources/js/ToastApp.jsx'])
+
   <!-- partial:partials/_footer.html -->
   @include('partials.footer')
   <script>

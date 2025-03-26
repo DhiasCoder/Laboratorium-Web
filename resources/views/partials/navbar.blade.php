@@ -28,8 +28,8 @@
         Tentang Kami <span class="material-icons">arrow_drop_down</span>
       </button>
       <div class="absolute hidden bg-white shadow-md rounded-md border border-indigo-300 group-hover:block w-52">
-        <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Layanan 1</a>
-        <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Layanan 2</a>
+        <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Peminjaman Ruang</a>
+        <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Peminjaman Alat</a>
       </div>
     </div>
 
@@ -39,8 +39,8 @@
         Fasilitas <span class="material-icons">arrow_drop_down</span>
       </button>
       <div class="absolute hidden bg-white shadow-md rounded-md border border-indigo-300 group-hover:block w-52">
-        <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Layanan 1</a>
-        <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Layanan 2</a>
+        <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Alat Laboratorium</a>
+        <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Coming Soon</a>
       </div>
     </div>
 
@@ -50,8 +50,8 @@
         Layanan <span class="material-icons">arrow_drop_down</span>
       </button>
       <div class="absolute hidden bg-white shadow-md rounded-md border border-indigo-300 group-hover:block w-52">
-        <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Layanan 1</a>
-        <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Layanan 2</a>
+        <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Peminjaman Ruang</a>
+        <a href="#" class="block px-4 py-2 hover:bg-gradient-to-r from-blue-300 to-sky-600 text-black">Peminjaman Alat</a>
       </div>
     </div>
 
@@ -73,7 +73,6 @@
         <button type="submit" class="bg-gray-800 text-white px-4 py-2 rounded-full shadow 
               transition-all duration-300 ease-out
               hover:bg-gray-700 hover:text-white hover:shadow-xl hover:-translate-y-1 hover:scale-105">
-          <i class="fas fa-sign-out-alt w-5"></i>
           <span class="ml-2">Logout</span>
         </button>
       </form>
@@ -84,7 +83,6 @@
       <a href="{{ route('login') }}" class="bg-gray-800 text-white px-4 py-2 rounded-full shadow 
             transition-all duration-300 ease-out
             hover:bg-gray-700 hover:text-white hover:shadow-xl hover:-translate-y-1 hover:scale-105">
-        <i class="fas fa-sign-in-alt w-5"></i>
         <span class="ml-2">Masuk</span>
       </a>
     </div>
@@ -111,8 +109,8 @@
         Tentang Kami <span class="material-icons transition-transform duration-200">arrow_drop_down</span>
       </button>
       <div class="mobile-dropdown-content hidden pl-4 mt-2 space-y-2">
-        <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Layanan 1</a>
-        <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Layanan 2</a>
+        <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Visi dan Misi</a>
+        <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Struktur Organisasi</a>
       </div>
     </div>
 
@@ -122,8 +120,8 @@
         Fasilitas <span class="material-icons transition-transform duration-200">arrow_drop_down</span>
       </button>
       <div class="mobile-dropdown-content hidden pl-4 mt-2 space-y-2">
-        <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Layanan 1</a>
-        <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Layanan 2</a>
+        <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Alat Laboratorium</a>
+        <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Coming Soon</a>
       </div>
     </div>
 
@@ -133,8 +131,8 @@
         Layanan <span class="material-icons transition-transform duration-200">arrow_drop_down</span>
       </button>
       <div class="mobile-dropdown-content hidden pl-4 mt-2 space-y-2">
-        <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Layanan 1</a>
-        <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Layanan 2</a>
+        <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Peminjaman Ruang</a>
+        <a href="#" class="block py-2 text-gray-700 hover:text-blue-600">Peminjaman Alat</a>
       </div>
     </div>
 

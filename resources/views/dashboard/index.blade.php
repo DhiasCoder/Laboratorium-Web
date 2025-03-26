@@ -10,6 +10,12 @@
 </head>
 
 <body class="bg-gray-100">
+  <div id="toast-root"
+    data-success="{{ session('success') }}"
+    data-error="{{ session('error') }}"
+    data-info="{{ session('info') }}">
+  </div>
+  @vite(['resources/js/ToastApp.jsx'])
   <div class="min-h-screen flex">
     <!-- Sidebar - Default hidden on mobile, toggle with JS -->
     <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-20 hidden lg:hidden"></div>
@@ -541,7 +547,6 @@
       sidebarOverlay.addEventListener('click', closeSidebar);
     });
   </script>
-
 </body>
 
 </html>

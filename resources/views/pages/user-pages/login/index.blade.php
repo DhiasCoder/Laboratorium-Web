@@ -57,6 +57,12 @@
 </head>
 
 <body class="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+  <div id="toast-root"
+    data-success="{{ session('success') }}"
+    data-error="{{ session('error') }}"
+    data-info="{{ session('info') }}">
+  </div>
+  @vite(['resources/js/ToastApp.jsx'])
   <div class="max-w-6xl w-full flex flex-col md:flex-row rounded-2xl overflow-hidden custom-shadow bg-white">
     <!-- Left: Form Login (Full width on mobile, half on desktop) -->
     <div class="w-full md:w-1/2 p-6 sm:p-8 md:p-10 bg-white order-2 md:order-1">
@@ -84,12 +90,15 @@
         <div class="mb-6">
           <label class="block text-gray-700 font-medium mb-2">Password</label>
           <div class="relative">
-            <input type="password" name="password" value="{{ old('password') }}"
+            <input type="password" id="password" name="password" value="{{ old('password') }}"
               class="w-full px-4 py-3 border border-gray-300 rounded-lg input-focus transition duration-200 pl-10"
               placeholder="Masukkan password Anda">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400 absolute left-3 top-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
             </svg>
+            <button type="button" onclick="togglePassword()" class="absolute right-3 top-3.5 text-gray-500 hover:text-gray-700">
+              <i id="toggleIcon" class="fas fa-eye"></i>
+            </button>
           </div>
         </div>
 
@@ -115,21 +124,28 @@
       </div>
 
       <div class="grid grid-cols-2 gap-4 mb-6">
-        <button class="flex items-center justify-center py-2.5 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-          <svg class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M20.2837 10.2515H19.5V10.2H12V13.8H16.8383C16.2173 15.8507 14.2798 17.4 12 17.4C9.03671 17.4 6.59997 14.9632 6.59997 12C6.59997 9.03675 9.03671 6.6 12 6.6C13.3529 6.6 14.5682 7.05741 15.5169 7.80154L18.2372 5.08125C16.6355 3.61354 14.4469 2.7 12 2.7C6.91996 2.7 2.79999 6.81998 2.79999 12C2.79999 17.18 6.91996 21.3 12 21.3C17.08 21.3 21.2 17.18 21.2 12C21.2 11.407 21.2556 10.8229 21.1388 10.2515H20.2837Z" fill="#FFC107" />
-            <path d="M3.95312 7.75359L7.08175 10.0559C7.91933 8.00824 9.81192 6.6 12 6.6C13.3529 6.6 14.5682 7.05741 15.5169 7.80154L18.2372 5.08125C16.6355 3.61354 14.4469 2.7 12 2.7C8.5219 2.7 5.48366 4.7236 3.95312 7.75359Z" fill="#FF3D00" />
-            <path d="M12 21.3C14.3853 21.3 16.5206 20.4169 18.1095 18.9967L15.1056 16.4813C14.1789 17.1694 13.0336 17.4 12 17.4C9.72638 17.4 7.78954 15.8582 7.16257 13.8102L3.97949 16.1959C5.47892 19.303 8.56393 21.3 12 21.3Z" fill="#4CAF50" />
-            <path d="M20.2837 10.2515H19.5V10.2H12V13.8H16.8383C16.5447 14.7549 15.9605 15.5848 15.1029 16.1974L15.1056 16.4813L18.1095 18.9967C17.9081 19.1688 21.2 17.1 21.2 12C21.2 11.407 21.2556 10.8229 21.1388 10.2515H20.2837Z" fill="#1976D2" />
-          </svg>
-          <span class="text-sm font-medium">Google</span>
-        </button>
-        <button class="flex items-center justify-center py-2.5 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
-          <svg class="h-5 w-5 mr-2 text-blue-600" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-          </svg>
-          <span class="text-sm font-medium">Facebook</span>
-        </button>
+        <!-- Button Login Google -->
+        <a href="/auth/google">
+          <button type="submit" class="w-full flex items-center justify-center py-2.5 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+            <svg class="h-5 w-5 mr-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.2837 10.2515H19.5V10.2H12V13.8H16.8383C16.2173 15.8507 14.2798 17.4 12 17.4C9.03671 17.4 6.59997 14.9632 6.59997 12C6.59997 9.03675 9.03671 6.6 12 6.6C13.3529 6.6 14.5682 7.05741 15.5169 7.80154L18.2372 5.08125C16.6355 3.61354 14.4469 2.7 12 2.7C6.91996 2.7 2.79999 6.81998 2.79999 12C2.79999 17.18 6.91996 21.3 12 21.3C17.08 21.3 21.2 17.18 21.2 12C21.2 11.407 21.2556 10.8229 21.1388 10.2515H20.2837Z" fill="#FFC107" />
+              <path d="M3.95312 7.75359L7.08175 10.0559C7.91933 8.00824 9.81192 6.6 12 6.6C13.3529 6.6 14.5682 7.05741 15.5169 7.80154L18.2372 5.08125C16.6355 3.61354 14.4469 2.7 12 2.7C8.5219 2.7 5.48366 4.7236 3.95312 7.75359Z" fill="#FF3D00" />
+              <path d="M12 21.3C14.3853 21.3 16.5206 20.4169 18.1095 18.9967L15.1056 16.4813C14.1789 17.1694 13.0336 17.4 12 17.4C9.72638 17.4 7.78954 15.8582 7.16257 13.8102L3.97949 16.1959C5.47892 19.303 8.56393 21.3 12 21.3Z" fill="#4CAF50" />
+              <path d="M20.2837 10.2515H19.5V10.2H12V13.8H16.8383C16.5447 14.7549 15.9605 15.5848 15.1029 16.1974L15.1056 16.4813L18.1095 18.9967C17.9081 19.1688 21.2 17.1 21.2 12C21.2 11.407 21.2556 10.8229 21.1388 10.2515H20.2837Z" fill="#1976D2" />
+            </svg>
+            <span class="text-sm font-medium">Google</span>
+          </button>
+        </a>
+
+        <!-- Button Login Github -->
+        <a href="/auth/github">
+          <button type="submit" class="w-full flex items-center justify-center py-2.5 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+            <svg class="h-5 w-5 mr-2 text-black" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.387.6.113.82-.26.82-.577 0-.285-.01-1.04-.015-2.04-3.338.725-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.757-1.333-1.757-1.09-.745.083-.729.083-.729 1.205.084 1.84 1.236 1.84 1.236 1.07 1.834 2.809 1.304 3.495.997.108-.775.417-1.304.76-1.604-2.665-.3-5.467-1.334-5.467-5.93 0-1.31.465-2.38 1.235-3.22-.123-.303-.535-1.523.117-3.176 0 0 1.005-.322 3.3 1.23a11.51 11.51 0 0 1 3-.405c1.02.005 2.045.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.655 1.653.243 2.873.12 3.176.77.84 1.23 1.91 1.23 3.22 0 4.61-2.807 5.625-5.48 5.92.43.372.81 1.1.81 2.22 0 1.604-.015 2.896-.015 3.29 0 .32.21.694.825.576C20.565 22.092 24 17.592 24 12.297 24 5.67 18.627.297 12 .297z" />
+            </svg>
+            <span class="text-sm font-medium">Github</span>
+          </button>
+        </a>
       </div>
 
       <p class="text-sm text-center text-gray-500 mt-4">Belum punya akun? <a href="#" class="text-blue-600 font-medium hover:underline">Daftar Sekarang</a></p>
@@ -175,6 +191,20 @@
     </div>
   </div>
   <script>
+    function togglePassword() {
+      const passwordInput = document.getElementById('password');
+      const toggleIcon = document.getElementById('toggleIcon');
+
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        toggleIcon.classList.remove('fa-eye');
+        toggleIcon.classList.add('fa-eye-slash');
+      } else {
+        passwordInput.type = 'password';
+        toggleIcon.classList.remove('fa-eye-slash');
+        toggleIcon.classList.add('fa-eye');
+      }
+    }
     // Auto scroll to login form on page load
     window.addEventListener('load', function() {
       // Menunggu sedikit waktu untuk memastikan halaman sudah dimuat sepenuhnya
@@ -189,6 +219,16 @@
       }, 500);
     });
   </script>
+  @if (session('error'))
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script>
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: "{{ session('error') }}",
+    });
+  </script>
+  @endif
 </body>
 
 </html>

@@ -3,6 +3,7 @@
 use App\Models\UserAccessLog;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -17,16 +18,16 @@ use Illuminate\Support\Facades\Auth;
 */
 
 // ==== Contact Mail ====
+/**
+ * socialite auth
+ */
+Route::get('/auth/{provider}', [App\Http\Controllers\Auth\SocialiteController::class, 'redirectToProvider']);
+Route::get('/auth/{provider}/callback', [App\Http\Controllers\Auth\SocialiteController::class, 'handleProvideCallback']);
+
 // Middleware Auth
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', function () {
-        if (auth()->user()->role == 'admin') {
-            return view('dashboard.index'); // View dashboard jika admin
-        }
-        return redirect('/'); // Redirect ke welcome jika bukan admin
-    })->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 });
-////////////////////////
 
 Route::get('/user-access-logs', function () {
     return view('logs', ['logs' => UserAccessLog::latest()->get()]);
@@ -70,7 +71,6 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('welcome');
 })->name('home');
-////////////////////////
 
 // Login View
 Route::get('/login', function () {
@@ -78,27 +78,24 @@ Route::get('/login', function () {
 })->name('login');
 
 Route::post('/login', [AuthController::class, 'login'])->name('login');
-////////////////////////
 
 Route::post('/logout', function () {
     Auth::logout(); // Logout user
     request()->session()->invalidate(); // Hapus semua session
     request()->session()->regenerateToken(); // Regenerasi CSRF token
-
-    return redirect('/login'); // Redirect ke halaman login
+    return redirect('/login')->with('success', 'Logout Berhasil!'); // Redirect ke halaman login
 })->name('logout');
 
 Route::post('/logouts', function () {
     Auth::logout(); // Logout user
     request()->session()->invalidate(); // Hapus semua session
     request()->session()->regenerateToken(); // Regenerasi CSRF token
-
-    return redirect('/'); // Redirect ke halaman login
+    return redirect('/home')->with('success', 'Logout Berhasil!'); // Redirect ke halaman login
 })->name('logouts');
 
-Route::get('/register', function () {
-    return view('pages.user-pages.register.index');
-});
+// Route::get('/register', function () {
+//     return view('pages.user-pages.register.index');
+// })->name('register');
 
 Route::get('/erro404', function () {
     return view('pages.error-pages.404.index');
