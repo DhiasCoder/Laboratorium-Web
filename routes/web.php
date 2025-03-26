@@ -34,8 +34,12 @@ Route::get('/user-access-logs', function () {
 });
 
 Route::get('/labs-room', function () {
+    if (!auth()->check()) {
+        return redirect()->route('peminjamanlab')->with('error', 'Harus Login Dulu!'); // Ganti dengan route yang sesuai
+    }
     return view('labs-room.index');
 })->name('labs-room');
+
 
 Route::get('/jadwal', function () {
     return view('jadwal.index');

@@ -261,7 +261,7 @@
 
             <div class="flex flex-col sm:flex-row justify-center items-center mt-8 gap-4">
                 <a href="{{ route('home') }}" class="bg-gray-800 text-white px-6 py-3 rounded-lg font-bold hover:bg-orange-500 transition transform hover:scale-105">Kembali</a>
-                <a href="{{ route('peminjamanlab.create') }}" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700 transition transform hover:scale-105">Isi Formulir</a>
+                <a href="{{ route('labs-room') }}" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700 transition transform hover:scale-105">Isi Formulir</a>
             </div>
         </div>
     </div>
