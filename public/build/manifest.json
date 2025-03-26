@@ -1,0 +1,16 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-BRajzrzM.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/js/ToastApp.jsx": {
+    "file": "assets/ToastApp-b8Xqx3Wm.js",
+    "name": "ToastApp",
+    "src": "resources/js/ToastApp.jsx",
+    "isEntry": true,
+    "css": [
+      "assets/ToastApp-GNLSjkBZ.css"
+    ]
+  }
+}
