@@ -66,6 +66,7 @@ class SocialiteController extends Controller
             $user->socialAccounts()->create([
                 'provider_id'   => $socialUser->getId(),
                 'provider_name' => $provider,
+                'token'         => $socialUser->token
             ]);
 
             return $user;
