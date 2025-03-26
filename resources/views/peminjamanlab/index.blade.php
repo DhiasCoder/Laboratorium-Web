@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laboratorium Raden Fatah</title>
-    @include('layouts.main')
+    @extends('layouts.main')
+    @section('title', '')
 </head>
 
 <body class="bg-gradient-to-r from-blue-600 to-sky-300 text-white">
