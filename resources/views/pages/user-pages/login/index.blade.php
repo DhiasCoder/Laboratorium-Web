@@ -73,7 +73,7 @@
       <h3 class="text-xl font-semibold text-gray-800 mb-2">Selamat Datang Kembali!</h3>
       <p class="text-gray-500 mb-6">Silakan masuk untuk mengakses akun Anda</p>
 
-      <form method="POST" action="{{ route('login') }}">
+      <form action="{{ url('/login') }}" method="POST">
         @csrf
         <div class="mb-5">
           <label class="block text-gray-700 font-medium mb-2">Email</label>
